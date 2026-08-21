@@ -9,204 +9,166 @@ body {
 }
 
 body {
-    background: #f8f5ef;
-    color: #191613;
-    font-family: Georgia, "Times New Roman", serif;
+    background: #090909;
+    color: #d7d2ca;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* =========================================================
-   CINEMATIC HEADER
+   HERO
 ========================================================= */
 
 .hero {
     position: relative;
     width: 100%;
-    height: 410px;
-
+    height: 320px;
     overflow: hidden;
-    background: #050403;
-
-    border-bottom: 1px solid #a97b2f;
+    background: #050505;
+    border-bottom: 1px solid #8e641d;
 }
-
-
-/* both images */
 
 .hero-image {
     position: absolute;
     top: 0;
-
     height: 100%;
-    display: block;
-
     object-fit: cover;
+    display: block;
 }
-
-
-/* left image */
 
 .hero-image:first-child {
     left: 0;
-
     width: 50%;
-
-    object-position: center 52%;
-
+    object-position: center 50%;
     filter:
-        brightness(0.9)
-        contrast(1.06)
-        saturate(1.02);
+        brightness(.72)
+        contrast(1.18)
+        saturate(.85)
+        sepia(.12);
 }
-
-
-/* right image */
 
 .hero-image:nth-child(2) {
     right: 0;
-
     width: 57%;
-
-    object-position: center 49%;
-
+    object-position: center 50%;
     filter:
-        brightness(0.93)
-        contrast(1.05)
-        saturate(1.06);
+        brightness(.72)
+        contrast(1.20)
+        saturate(.88)
+        sepia(.14);
 }
 
 
-/* cinematic middle blend */
+/* black blend through the center */
 
 .hero::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
     z-index: 2;
-
     pointer-events: none;
 
     background:
         linear-gradient(
             90deg,
-
-            rgba(0, 0, 0, 0.00) 0%,
-            rgba(0, 0, 0, 0.00) 29%,
-
-            rgba(0, 0, 0, 0.10) 34%,
-            rgba(0, 0, 0, 0.38) 40%,
-
-            rgba(0, 0, 0, 0.78) 46%,
-            rgba(0, 0, 0, 0.90) 50%,
-            rgba(0, 0, 0, 0.78) 54%,
-
-            rgba(0, 0, 0, 0.38) 60%,
-            rgba(0, 0, 0, 0.10) 66%,
-
-            rgba(0, 0, 0, 0.00) 72%,
-            rgba(0, 0, 0, 0.00) 100%
+            rgba(0,0,0,0.00) 0%,
+            rgba(0,0,0,0.00) 30%,
+            rgba(0,0,0,.20) 36%,
+            rgba(0,0,0,.68) 43%,
+            rgba(0,0,0,.92) 49%,
+            rgba(0,0,0,.92) 52%,
+            rgba(0,0,0,.68) 58%,
+            rgba(0,0,0,.20) 65%,
+            rgba(0,0,0,0.00) 72%,
+            rgba(0,0,0,0.00) 100%
         );
 }
 
 
-/* subtle bottom vignette */
+/* light vignette */
 
 .hero::after {
     content: "";
-
     position: absolute;
     inset: 0;
-
     z-index: 2;
-
     pointer-events: none;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0.02) 0%,
-            rgba(0,0,0,0.00) 48%,
-            rgba(0,0,0,0.22) 100%
+            rgba(0,0,0,.02),
+            rgba(0,0,0,.05) 55%,
+            rgba(0,0,0,.30)
         );
 }
 
 
 /* =========================================================
-   MOLOCO TITLE
+   TITLE
 ========================================================= */
 
 .hero-title {
     position: absolute;
-
     z-index: 5;
 
     left: 50%;
-    top: 55%;
+    top: 53%;
 
     transform: translate(-50%, -50%);
 
-    width: 720px;
-
+    width: 700px;
     text-align: center;
-
-    color: #f1d99c;
-
-    text-shadow:
-        0 2px 4px rgba(0,0,0,0.75),
-        0 0 16px rgba(0,0,0,0.45);
 }
-
 
 .hero-title h1 {
     margin: 0;
 
-    font-size: 82px;
+    font-family: Georgia, "Times New Roman", serif;
 
-    font-weight: 400;
+    font-size: 71px;
+    line-height: 1;
 
-    line-height: 0.95;
+    font-weight: normal;
 
-    letter-spacing: 18px;
+    letter-spacing: 16px;
 
-    color: #efd698;
+    color: #ead094;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.85);
 }
-
-
-/* decorative line */
 
 .hero-title h1::after {
     content: "✦";
 
     display: block;
 
-    width: 420px;
+    width: 390px;
 
-    margin: 26px auto 18px;
+    margin: 22px auto 17px;
 
-    border-top: 1px solid rgba(211, 163, 68, 0.65);
+    border-top: 1px solid rgba(204,151,53,.55);
 
-    color: #d6a044;
+    color: #cf9835;
 
-    font-size: 13px;
-
+    font-size: 12px;
     line-height: 1;
 
-    transform: translateY(7px);
+    transform: translateY(6px);
 }
-
 
 .hero-title p {
     margin: 0;
 
-    color: #ead8af;
+    font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 15px;
+    color: #ddc797;
 
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.45;
 
-    letter-spacing: 3.2px;
+    letter-spacing: 3px;
 
     text-transform: uppercase;
 }
@@ -217,21 +179,18 @@ body {
 ========================================================= */
 
 nav {
-    width: 100%;
-    height: 62px;
+    height: 48px;
 
     display: flex;
-
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    gap: 72px;
+    gap: 60px;
 
-    background: #0b0b0b;
+    background: #090909;
 
-    border-bottom: 1px solid #24211c;
+    border-bottom: 1px solid #222;
 }
-
 
 nav a {
     position: relative;
@@ -241,27 +200,20 @@ nav a {
     display: flex;
     align-items: center;
 
-    color: #eee8dd;
-
     text-decoration: none;
 
+    color: #aaa59f;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
     text-transform: uppercase;
-
-    font-size: 15px;
-
-    letter-spacing: 2.2px;
 }
 
-
-nav a:hover {
-    color: #d9a74c;
-}
-
-
+nav a:hover,
 nav a.active {
-    color: #d9a74c;
+    color: #d7a642;
 }
-
 
 nav a.active::after {
     content: "";
@@ -274,26 +226,24 @@ nav a.active::after {
 
     height: 2px;
 
-    background: #c99032;
+    background: #d1a13d;
 }
 
 
 /* =========================================================
-   MAIN PAGE
+   PAGE
 ========================================================= */
 
 .page {
-    width: min(1240px, calc(100% - 50px));
+    width: min(1180px, calc(100% - 40px));
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-columns: 220px minmax(0, 1fr);
 
-    min-height: 850px;
-
-    background: #f8f5ef;
+    min-height: 900px;
 }
 
 
@@ -302,230 +252,125 @@ nav a.active::after {
 ========================================================= */
 
 .sidebar {
-    padding: 46px 38px 80px 0;
+    padding: 31px 36px 80px 0;
 
-    border-right: 1px solid #d9d3ca;
+    border-right: 1px solid #252525;
 }
-
 
 .sidebar h3 {
     margin: 0 0 20px;
 
-    color: #1d1915;
+    font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 16px;
+    font-size: 14px;
 
-    font-weight: bold;
+    letter-spacing: 1.7px;
 
-    letter-spacing: 1.6px;
+    color: #e0c98f;
 
     text-transform: uppercase;
 }
-
-
-.sidebar p {
-    margin: 0;
-
-    color: #514b44;
-
-    font-size: 15px;
-
-    line-height: 1.75;
-}
-
 
 .sidebar h3::after {
     content: "✦";
 
     display: block;
 
-    width: 72px;
+    width: 74px;
 
-    margin-top: 12px;
+    margin-top: 10px;
 
-    color: #c9953d;
+    color: #c69231;
 
-    font-size: 11px;
+    font-size: 9px;
 
     letter-spacing: 4px;
 }
 
+.sidebar p {
+    margin: 0;
+
+    color: #a8a39c;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
 
 .sidebar-rule {
-    width: 32px;
+    width: 28px;
 
-    margin: 34px 0;
+    margin: 28px 0;
 
     border: 0;
 
-    border-top: 1px solid #c8c0b5;
+    border-top: 1px solid #46361c;
 }
 
 
 /* =========================================================
-   CHAT
+   CHAT COLUMN
 ========================================================= */
 
 .chat {
-    padding: 46px 0 110px 48px;
+    padding: 27px 0 100px 43px;
 }
-
 
 .room-heading {
-    margin-bottom: 27px;
+    padding-bottom: 23px;
 
-    padding-bottom: 27px;
+    margin-bottom: 19px;
 
-    border-bottom: 1px solid #d9d3ca;
+    border-bottom: 1px solid #292929;
 }
-
 
 .room-heading h2 {
     margin: 0;
 
-    color: #171411;
+    font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 34px;
+    font-size: 29px;
+
+    line-height: 1.15;
 
     font-weight: normal;
 
-    line-height: 1.15;
+    color: #ddd8d0;
 }
-
 
 .room-heading p {
-    margin: 8px 0 0;
+    margin: 5px 0 0;
 
-    color: #6a6259;
+    color: #8e8a84;
 
-    font-size: 16px;
+    font-family: Georgia, "Times New Roman", serif;
 
-    line-height: 1.5;
+    font-size: 13px;
 }
 
 
 /* =========================================================
-   TEMPORARY CHAT
+   DISQUS
 ========================================================= */
 
-.disqus-placeholder {
+#disqus_thread {
+    color: #dedede;
+
     width: 100%;
+}
 
-    padding: 0;
+#disqus_thread a {
+    color: #d8a33c;
 }
 
 
-.comment-box {
-    width: 100%;
+/* remove old temporary demo elements if they remain */
 
-    min-height: 125px;
-
-    padding: 24px;
-
-    background: #fff;
-
-    border: 1px solid #d1ccc4;
-
-    color: #8c8882;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 16px;
-}
-
-
-.fake-comment {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 18px;
-
-    padding: 28px 0;
-
-    border-bottom: 1px solid #ddd7cf;
-}
-
-
+.disqus-placeholder,
+.comment-box,
+.fake-comment,
 .avatar {
-    width: 54px;
-    height: 54px;
-
-    flex: 0 0 54px;
-
-    border-radius: 50%;
-
-    background: #202020;
-}
-
-
-.fake-comment strong {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #111;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 15px;
-}
-
-
-.fake-comment p {
-    margin: 8px 0 0;
-
-    color: #191613;
-
-    font-size: 17px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 950px) {
-
-    .hero {
-        height: 340px;
-    }
-
-    .hero-title {
-        width: 580px;
-    }
-
-    .hero-title h1 {
-        font-size: 62px;
-        letter-spacing: 13px;
-    }
-
-    .hero-title h1::after {
-        width: 330px;
-    }
-
-    .hero-title p {
-        font-size: 13px;
-        letter-spacing: 2.5px;
-    }
-
-    nav {
-        gap: 45px;
-    }
-
-    .page {
-        grid-template-columns: 200px minmax(0, 1fr);
-    }
-
-    .sidebar {
-        padding-right: 25px;
-    }
-
-    .chat {
-        padding-left: 35px;
-    }
+    display: none;
 }
 
 
@@ -533,49 +378,23 @@ nav a.active::after {
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
     .hero {
-        height: 280px;
-    }
-
-    .hero-image:first-child {
-        width: 62%;
-        object-position: 55% center;
-    }
-
-    .hero-image:nth-child(2) {
-        width: 62%;
-        object-position: center center;
-    }
-
-    .hero::before {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(0,0,0,0.05) 0%,
-                rgba(0,0,0,0.30) 35%,
-                rgba(0,0,0,0.85) 47%,
-                rgba(0,0,0,0.90) 50%,
-                rgba(0,0,0,0.85) 53%,
-                rgba(0,0,0,0.30) 65%,
-                rgba(0,0,0,0.05) 100%
-            );
+        height: 260px;
     }
 
     .hero-title {
         width: 92%;
-        top: 54%;
     }
 
     .hero-title h1 {
-        font-size: 43px;
+        font-size: 42px;
         letter-spacing: 9px;
     }
 
     .hero-title h1::after {
-        width: 230px;
-        margin-top: 20px;
+        width: 240px;
     }
 
     .hero-title p {
@@ -584,18 +403,18 @@ nav a.active::after {
     }
 
     nav {
-        height: 56px;
-        gap: 22px;
+        gap: 23px;
     }
 
     nav a {
-        font-size: 11px;
-        letter-spacing: 1.3px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
     }
 
     .page {
         display: block;
-        width: calc(100% - 30px);
+
+        width: calc(100% - 28px);
     }
 
     .sidebar {
@@ -603,18 +422,6 @@ nav a.active::after {
     }
 
     .chat {
-        padding: 32px 0 70px;
-    }
-
-    .room-heading h2 {
-        font-size: 27px;
-    }
-
-    .room-heading p {
-        font-size: 14px;
-    }
-
-    .comment-box {
-        min-height: 105px;
+        padding: 28px 0 70px;
     }
 }
