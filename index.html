@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,10 @@
 <title>Moloco</title>
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -25,70 +30,107 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
     position: relative;
+
+    width: 100%;
     height: 285px;
+
     overflow: hidden;
+
     background: #050505;
+
     border-bottom: 1px solid #76531e;
 }
+
 
 .hero-left,
 .hero-right {
     position: absolute;
+
     top: 0;
     bottom: 0;
+
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+
 .hero-left {
     left: 0;
+
     width: 52%;
-    background-image: url("beehive.jpg");
-    background-position: center 48%;
+
+    background-image:
+        url("beehive.jpg");
+
+    background-position:
+        center 48%;
 }
+
 
 .hero-right {
     right: 0;
+
     width: 56%;
-    background-image: url("field.png");
-    background-position: center 48%;
+
+    background-image:
+        url("field.png");
+
+    background-position:
+        center 48%;
 }
+
+
+/* dark middle blend */
 
 .hero::before {
     content: "";
+
     position: absolute;
     inset: 0;
+
     z-index: 2;
+
     pointer-events: none;
 
     background:
         linear-gradient(
             90deg,
+
             rgba(0,0,0,0) 0%,
             rgba(0,0,0,0) 30%,
+
             rgba(0,0,0,.15) 36%,
             rgba(0,0,0,.48) 42%,
+
             rgba(0,0,0,.86) 47%,
             rgba(0,0,0,.94) 50%,
             rgba(0,0,0,.86) 53%,
+
             rgba(0,0,0,.48) 58%,
             rgba(0,0,0,.15) 64%,
+
             rgba(0,0,0,0) 70%,
             rgba(0,0,0,0) 100%
         );
 }
 
+
+/* subtle vignette */
+
 .hero::after {
     content: "";
+
     position: absolute;
     inset: 0;
+
     z-index: 3;
+
     pointer-events: none;
 
     background:
@@ -99,187 +141,310 @@ body {
         );
 }
 
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
 .hero-center {
     position: absolute;
+
     z-index: 5;
+
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+
+    transform:
+        translate(-50%, -50%);
+
     width: 100%;
 }
 
+
 .title-box {
     width: 470px;
+
     max-width: 90%;
+
     margin: 0 auto;
+
     text-align: center;
 }
 
+
 .title-box h1 {
     margin: 0 0 18px;
+
     color: #eed29a;
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     font-size: 64px;
+
     font-weight: normal;
-    letter-spacing: 13px;
+
     line-height: 1;
-    text-shadow: 0 2px 5px rgba(0,0,0,.85);
+
+    letter-spacing: 13px;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.85);
 }
+
 
 .title-divider {
     position: relative;
+
     width: 360px;
+
     max-width: 90%;
+
     height: 12px;
-    margin: 0 auto 15px;
+
+    margin:
+        0 auto 15px;
 }
+
 
 .title-divider::before,
 .title-divider::after {
     content: "";
+
     position: absolute;
+
     top: 50%;
+
     width: 46%;
     height: 1px;
-    background: #755724;
+
+    background:
+        #755724;
 }
+
 
 .title-divider::before {
     left: 0;
 }
 
+
 .title-divider::after {
     right: 0;
 }
 
+
 .title-divider span {
     position: relative;
+
     top: -3px;
+
     color: #d09a39;
+
     font-size: 9px;
 }
 
+
 .title-box p {
     margin: 0;
+
     color: #dac18e;
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     font-size: 13px;
+
     line-height: 1.35;
+
     letter-spacing: 3px;
-    text-transform: uppercase;
+
+    text-transform:
+        uppercase;
 }
 
 
-/* =========================
-   NAV
-========================= */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .main-nav {
     height: 48px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 58px;
+
     background: #090909;
-    border-bottom: 1px solid #242424;
+
+    border-bottom:
+        1px solid #242424;
 }
+
 
 .main-nav a {
     position: relative;
+
     height: 48px;
+
     display: flex;
+
     align-items: center;
+
     color: #aaa59e;
+
     text-decoration: none;
+
     text-transform: uppercase;
+
     font-size: 11px;
+
     letter-spacing: 2px;
 }
+
 
 .main-nav a:hover,
 .main-nav a.active {
     color: #d6a23d;
 }
 
+
 .main-nav a.active::after {
     content: "";
+
     position: absolute;
+
     left: 0;
     right: 0;
     bottom: 0;
+
     height: 2px;
+
     background: #d6a23d;
 }
 
 
-/* =========================
-   PAGE
-========================= */
+/* =========================================================
+   SITE LAYOUT
+========================================================= */
 
 .site-shell {
-    width: 1120px;
-    max-width: calc(100% - 40px);
+    width: 1260px;
+
+    max-width:
+        calc(100% - 40px);
+
     margin: 0 auto;
+
     display: grid;
-    grid-template-columns: 185px minmax(0, 1fr);
-    min-height: 850px;
+
+    grid-template-columns:
+        220px minmax(0, 1fr);
+
+    min-height: 900px;
 }
 
 
-/* =========================
+/* =========================================================
    SIDEBAR
-========================= */
+========================================================= */
 
 .sidebar {
-    padding: 27px 28px 100px 0;
-    border-right: 1px solid #272727;
+    padding:
+        34px
+        34px
+        100px
+        0;
+
+    border-right:
+        1px solid #272727;
 }
+
 
 .sidebar-section {
     margin-bottom: 35px;
 }
 
+
 .sidebar h3 {
     margin: 0;
+
     color: #dec78e;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 13px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
     letter-spacing: 1.3px;
-    text-transform: uppercase;
+
+    text-transform:
+        uppercase;
 }
+
 
 .mini-divider {
     width: 58px;
-    margin: 10px 0 18px;
+
+    margin:
+        10px
+        0
+        18px;
+
     padding-top: 2px;
+
     color: #c69234;
-    border-top: 1px solid #48361d;
+
+    border-top:
+        1px solid #48361d;
+
     font-size: 8px;
+
     text-align: center;
 }
 
+
 .sidebar p {
     margin: 0;
+
     color: #9e9992;
-    font-size: 12px;
+
+    font-size: 13px;
+
     line-height: 1.7;
 }
 
+
 .room-list {
     margin: 0;
+
     padding: 0;
+
     list-style: none;
 }
+
 
 .room-list li {
     margin-bottom: 9px;
 }
 
+
 .room-list a {
     color: #aaa59e;
+
     text-decoration: none;
-    font-size: 12px;
+
+    font-size: 13px;
 }
+
 
 .room-list a:hover,
 .room-list a.current-room {
@@ -287,63 +452,109 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    MAIN CONTENT
-========================= */
+========================================================= */
 
 .main-content {
     min-width: 0;
-    padding: 25px 0 100px 37px;
+
+    padding:
+        32px
+        0
+        100px
+        46px;
 }
 
+
 .room-header {
-    margin: 0 0 18px;
-    padding: 0 0 19px;
-    border-bottom: 1px solid #292929;
+    margin:
+        0
+        0
+        22px;
+
+    padding:
+        0
+        0
+        22px;
+
+    border-bottom:
+        1px solid #292929;
 }
+
 
 .room-header h2 {
     margin: 0;
+
     color: #ded9d1;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 27px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 31px;
+
     font-weight: normal;
+
     line-height: 1.1;
 }
 
+
 .room-header p {
-    margin: 5px 0 0;
+    margin:
+        5px 0 0;
+
     color: #8f8a83;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 12px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 13px;
 }
 
 
-/* =========================
+/* =========================================================
    DISQUS PREVIEW
-========================= */
+========================================================= */
 
 .disqus-preview {
     width: 100%;
 }
 
+
 .comment-count {
-    margin: 0 0 14px;
+    margin:
+        0 0 15px;
+
     color: #ccc;
-    font-size: 12px;
+
+    font-size: 13px;
 }
+
+
+/* input */
 
 .disqus-input-row {
     display: grid;
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 13px;
+
+    grid-template-columns:
+        54px minmax(0, 1fr);
+
+    gap: 14px;
+
     align-items: center;
 }
 
+
 .disqus-user-avatar {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
+
     border-radius: 50%;
+
     background:
         radial-gradient(
             circle,
@@ -354,101 +565,194 @@ body {
         );
 }
 
+
 .disqus-input {
-    height: 56px;
+    height: 60px;
+
     display: flex;
+
     align-items: center;
-    padding: 0 18px;
+
+    padding:
+        0 20px;
+
     color: #767676;
+
     background: #0d0d0d;
-    border: 1px solid #353535;
+
+    border:
+        1px solid #353535;
+
     border-radius: 4px;
+
+    font-size: 13px;
+}
+
+
+/* toolbar */
+
+.disqus-toolbar {
+    min-height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin:
+        9px
+        0
+        10px;
+
+    color: #999;
+
     font-size: 12px;
 }
 
-.disqus-toolbar {
-    min-height: 34px;
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin: 8px 0 7px;
-    color: #999;
-    font-size: 11px;
-}
 
 .sorting {
     display: flex;
+
     gap: 24px;
+
     margin-left: auto;
 }
 
+
 .sorting .selected {
     color: #d5a23c;
+
     padding-bottom: 5px;
-    border-bottom: 2px solid #d5a23c;
+
+    border-bottom:
+        2px solid #d5a23c;
 }
 
 
-/* =========================
+/* =========================================================
    COMMENTS
-========================= */
+========================================================= */
 
 .comment-card {
     display: grid;
-    grid-template-columns: 47px minmax(0, 1fr);
-    gap: 14px;
-    min-height: 76px;
-    margin-bottom: 10px;
-    padding: 13px 14px;
+
+    grid-template-columns:
+        52px minmax(0, 1fr);
+
+    gap: 15px;
+
+    min-height: 96px;
+
+    margin:
+        0
+        0
+        11px;
+
+    padding:
+        16px
+        17px;
+
     color: #ccc;
-    background: linear-gradient(135deg, #171717, #111111);
-    border: 1px solid #303030;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171717,
+            #111111
+        );
+
+    border:
+        1px solid #303030;
+
     border-radius: 4px;
 }
 
+
 .comment-avatar {
-    width: 43px;
-    height: 43px;
+    width: 48px;
+    height: 48px;
+
     border-radius: 50%;
-    background: linear-gradient(135deg, #48535b, #1a1d20);
+
+    background:
+        linear-gradient(
+            135deg,
+            #48535b,
+            #1a1d20
+        );
 }
+
 
 .comment-content {
     min-width: 0;
 }
 
+
 .comment-name {
     display: block;
+
     color: #d6a13c;
-    font-size: 13px;
+
+    font-size: 14px;
+
     font-weight: bold;
 }
 
+
 .comment-time {
     display: block;
+
     margin-top: 3px;
+
     color: #777;
-    font-size: 10px;
+
+    font-size: 11px;
 }
 
+
 .comment-card p {
-    margin: 9px 0 8px;
+    margin:
+        10px
+        0;
+
     color: #d0ceca;
-    font-size: 12px;
-    line-height: 1.55;
+
+    font-size: 13px;
+
+    line-height: 1.6;
 }
+
 
 .comment-actions {
     display: flex;
-    gap: 20px;
+
+    gap: 22px;
+
     color: #888;
-    font-size: 10px;
+
+    font-size: 11px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .site-shell {
+        width: 1080px;
+
+        grid-template-columns:
+            190px minmax(0, 1fr);
+    }
+
+    .main-content {
+        padding-left: 36px;
+    }
+}
+
 
 @media (max-width: 850px) {
 
@@ -456,37 +760,49 @@ body {
         height: 230px;
     }
 
+
     .hero-left,
     .hero-right {
         width: 60%;
     }
 
+
     .title-box h1 {
         font-size: 45px;
+
         letter-spacing: 8px;
     }
+
 
     .title-divider {
         width: 240px;
     }
 
+
     .title-box p {
         font-size: 9px;
+
         letter-spacing: 1.8px;
     }
+
 
     .main-nav {
         gap: 28px;
     }
 
+
     .site-shell {
         display: block;
-        width: calc(100% - 30px);
+
+        width:
+            calc(100% - 30px);
     }
+
 
     .sidebar {
         display: none;
     }
+
 
     .main-content {
         padding-left: 0;
@@ -497,6 +813,7 @@ body {
 </head>
 
 <body>
+
 
 <header class="hero">
 
@@ -528,10 +845,21 @@ body {
 
 <nav class="main-nav">
 
-    <a class="active" href="#">HOME</a>
-    <a href="#">ROOMS</a>
-    <a href="#">ARCHIVE</a>
-    <a href="#">ABOUT</a>
+    <a class="active" href="#">
+        HOME
+    </a>
+
+    <a href="#">
+        ROOMS
+    </a>
+
+    <a href="#">
+        ARCHIVE
+    </a>
+
+    <a href="#">
+        ABOUT
+    </a>
 
 </nav>
 
@@ -543,7 +871,9 @@ body {
 
         <section class="sidebar-section">
 
-            <h3>ABOUT MOLOCO</h3>
+            <h3>
+                ABOUT MOLOCO
+            </h3>
 
             <div class="mini-divider">
                 ◆
@@ -559,7 +889,9 @@ body {
 
         <section class="sidebar-section">
 
-            <h3>ROOMS</h3>
+            <h3>
+                ROOMS
+            </h3>
 
             <div class="mini-divider">
                 ◆
@@ -634,19 +966,27 @@ body {
             <div class="disqus-toolbar">
 
                 <span>♡</span>
+
                 <span>24</span>
+
                 <span>•</span>
+
                 <span>Share</span>
+
 
                 <div class="sorting">
 
-                    <span>Best</span>
+                    <span>
+                        Best
+                    </span>
 
                     <span class="selected">
                         Newest
                     </span>
 
-                    <span>Oldest</span>
+                    <span>
+                        Oldest
+                    </span>
 
                 </div>
 
@@ -676,8 +1016,11 @@ body {
                     <div class="comment-actions">
 
                         <span>♡ 7</span>
+
                         <span>♧ 1</span>
+
                         <span>Reply</span>
+
                         <span>↗</span>
 
                     </div>
@@ -708,8 +1051,11 @@ body {
                     <div class="comment-actions">
 
                         <span>♡ 4</span>
+
                         <span>♧ 0</span>
+
                         <span>Reply</span>
+
                         <span>↗</span>
 
                     </div>
@@ -725,4 +1071,5 @@ body {
 </div>
 
 </body>
+
 </html>
