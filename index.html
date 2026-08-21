@@ -7,166 +7,315 @@
 
     <title>Moloco</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 
 <body>
 
-    <header class="hero">
 
-        <img
-            src="beehive.jpg"
-            alt=""
-            class="hero-image hero-left"
-        >
+<!-- =====================================================
+     CINEMATIC HEADER
+===================================================== -->
 
-        <img
-            src="field.png"
-            alt=""
-            class="hero-image hero-right"
-        >
+<header class="hero">
 
-        <div class="hero-blend"></div>
+    <img
+        src="./beehive.jpg"
+        class="hero-image hero-left"
+        alt=""
+    >
 
-        <div class="hero-title">
+    <img
+        src="./field.png"
+        class="hero-image hero-right"
+        alt=""
+    >
 
-            <h1>MOLOCO</h1>
+    <div class="hero-blend"></div>
 
-            <div class="hero-divider">
-                <span>✦</span>
-            </div>
 
-            <p>
-                A place to talk about anything<br>
-                that matters.
-            </p>
+    <div class="hero-title">
 
+        <h1>MOLOCO</h1>
+
+
+        <div class="hero-divider">
+            <span>✦</span>
         </div>
 
-    </header>
 
-
-    <nav class="nav">
-
-        <a href="#" class="active">Home</a>
-
-        <a href="#">Rooms</a>
-
-        <a href="#">Archive</a>
-
-        <a href="#">About</a>
-
-    </nav>
-
-
-    <div class="site-shell">
-
-        <aside class="sidebar">
-
-            <section class="sidebar-section">
-
-                <h3>About Moloco</h3>
-
-                <div class="mini-divider">✦</div>
-
-                <p>
-                    A quiet corner of the internet for conversation,
-                    shared interests, and whatever else happens to come up.
-                </p>
-
-            </section>
-
-
-            <section class="sidebar-section">
-
-                <h3>Rooms</h3>
-
-                <div class="mini-divider">✦</div>
-
-                <ul class="room-list">
-                    <li><a class="current-room" href="#">Main Room</a></li>
-                    <li><a href="#">Movies</a></li>
-                    <li><a href="#">Music</a></li>
-                    <li><a href="#">Anime</a></li>
-                </ul>
-
-            </section>
-
-        </aside>
-
-
-        <main class="main-content">
-
-            <section class="room-header">
-
-                <h2>Moloco · The Main Room</h2>
-
-                <p>
-                    Anything goes. Be kind. Keep it real.
-                </p>
-
-            </section>
-
-
-            <!-- REAL DISQUS GOES HERE -->
-
-            <section class="disqus-area">
-
-                <div id="disqus_thread"></div>
-
-            </section>
-
-        </main>
+        <p>
+            A place to talk about anything<br>
+            that matters.
+        </p>
 
     </div>
 
-
-    <!--
-        DISQUS
-
-        Replace YOUR-SHORTNAME below with the actual
-        shortname from your Disqus site settings.
-    -->
-
-    <!--
-
-    <script>
-
-        var disqus_config = function () {
-
-            this.page.url = window.location.href;
-
-            this.page.identifier = "moloco-main-room";
-
-        };
+</header>
 
 
-        (function() {
 
-            var d = document;
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-            var s = d.createElement("script");
+<nav class="nav">
 
-            s.src =
-                "https://YOUR-SHORTNAME.disqus.com/embed.js";
+    <a
+        href="./index.html"
+        class="active"
+    >
+        Home
+    </a>
 
-            s.setAttribute(
-                "data-timestamp",
-                +new Date()
-            );
+    <a href="#">
+        Rooms
+    </a>
 
-            (d.head || d.body).appendChild(s);
+    <a href="#">
+        Archive
+    </a>
 
-        })();
+    <a href="#">
+        About
+    </a>
 
-    </script>
+</nav>
 
 
-    <noscript>
-        Please enable JavaScript to view the comments powered by Disqus.
-    </noscript>
 
-    -->
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<div class="site-shell">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <section class="sidebar-section">
+
+            <h3>
+                About Moloco
+            </h3>
+
+
+            <div class="mini-divider">
+                ✦
+            </div>
+
+
+            <p>
+                A quiet corner of the internet for
+                conversation, shared interests, and
+                whatever else happens to come up.
+            </p>
+
+        </section>
+
+
+
+        <section class="sidebar-section">
+
+            <h3>
+                Rooms
+            </h3>
+
+
+            <div class="mini-divider">
+                ✦
+            </div>
+
+
+            <ul class="room-list">
+
+                <li>
+                    <a
+                        class="current-room"
+                        href="#"
+                    >
+                        Main Room
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Movies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Music
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Anime
+                    </a>
+                </li>
+
+            </ul>
+
+        </section>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CHAT COLUMN
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <section class="room-header">
+
+            <h2>
+                Moloco · The Main Room
+            </h2>
+
+
+            <p>
+                Anything goes. Be kind. Keep it real.
+            </p>
+
+        </section>
+
+
+
+        <!-- =============================================
+             DISQUS WILL LIVE HERE
+        ============================================== -->
+
+        <section class="disqus-area">
+
+            <div id="disqus_thread">
+
+                <!-- Temporary preview until we add Disqus -->
+
+                <div class="disqus-preview">
+
+                    <div class="preview-count">
+                        15795 Comments
+                    </div>
+
+
+                    <div class="preview-input">
+
+                        <div class="preview-avatar"></div>
+
+                        <div class="preview-field">
+                            Join the discussion...
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-toolbar">
+
+                        <span>♡ 24</span>
+
+                        <span>•</span>
+
+                        <span>Share</span>
+
+
+                        <div class="preview-sort">
+
+                            <span>Best</span>
+
+                            <span class="selected">
+                                Newest
+                            </span>
+
+                            <span>Oldest</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <article class="preview-comment">
+
+                        <div class="comment-avatar"></div>
+
+
+                        <div class="comment-body">
+
+                            <strong>
+                                Made in Heaven
+                            </strong>
+
+                            <small>
+                                9 days ago
+                            </small>
+
+
+                            <p>
+                                Welcome to Moloco. This is where
+                                the real Disqus thread will appear.
+                            </p>
+
+
+                            <div class="comment-actions">
+
+                                <span>♡ 7</span>
+
+                                <span>Reply</span>
+
+                                <span>Share</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="preview-comment small-comment">
+
+                        <div class="comment-avatar"></div>
+
+
+                        <div class="comment-body">
+
+                            <strong>
+                                Cloud
+                            </strong>
+
+                            <small>
+                                9 hours ago
+                            </small>
+
+
+                            <p>
+                                Today is really cold for some reason...
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
 
 </body>
 
