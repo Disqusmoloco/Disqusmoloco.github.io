@@ -1,897 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Moloco</title>
+    <title>Moloco</title>
 
-<style>
-
-/* ================================================
-   RESET
-================================================ */
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background: #080808;
-    color: #d7d3cc;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* ================================================
-   HERO
-================================================ */
-
-.hero {
-    position: relative;
-    width: 100%;
-    height: 285px;
-    overflow: hidden;
-    background: #050505;
-    border-bottom: 1px solid #76531e;
-}
-
-.hero-image {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hero-left {
-    left: 0;
-    width: 51%;
-    object-position: center 46%;
-}
-
-.hero-right {
-    right: 0;
-    width: 55%;
-    object-position: center 47%;
-}
-
-
-/* dark center transition */
-
-.hero-blend {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0) 0%,
-            rgba(0,0,0,0) 29%,
-            rgba(0,0,0,.15) 35%,
-            rgba(0,0,0,.48) 41%,
-            rgba(0,0,0,.86) 47%,
-            rgba(0,0,0,.94) 50%,
-            rgba(0,0,0,.86) 53%,
-            rgba(0,0,0,.48) 59%,
-            rgba(0,0,0,.15) 65%,
-            rgba(0,0,0,0) 71%,
-            rgba(0,0,0,0) 100%
-        );
-
-    pointer-events: none;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent 55%,
-            rgba(0,0,0,.28)
-        );
-
-    pointer-events: none;
-}
-
-
-/* ================================================
-   HERO TITLE
-================================================ */
-
-.hero-title {
-    position: absolute;
-    z-index: 5;
-
-    top: 52%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 620px;
-    text-align: center;
-}
-
-.hero-title h1 {
-    margin: 0;
-
-    color: #eed39a;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 58px;
-    font-weight: normal;
-
-    line-height: 1;
-    letter-spacing: 15px;
-
-    text-shadow: 0 2px 6px #000;
-}
-
-.hero-divider {
-    position: relative;
-    width: 360px;
-    height: 12px;
-
-    margin: 20px auto 17px;
-}
-
-.hero-divider::before,
-.hero-divider::after {
-    content: "";
-
-    position: absolute;
-    top: 50%;
-
-    width: 46%;
-    height: 1px;
-
-    background: #755623;
-}
-
-.hero-divider::before {
-    left: 0;
-}
-
-.hero-divider::after {
-    right: 0;
-}
-
-.hero-divider span {
-    position: relative;
-    top: -3px;
-
-    color: #d09b39;
-    font-size: 10px;
-}
-
-.hero-title p {
-    margin: 0;
-
-    color: #dac38e;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 13px;
-
-    line-height: 1.45;
-    letter-spacing: 2.8px;
-
-    text-transform: uppercase;
-}
-
-
-/* ================================================
-   NAV
-================================================ */
-
-.nav {
-    height: 45px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 58px;
-
-    background: #090909;
-
-    border-bottom: 1px solid #262626;
-}
-
-.nav a {
-    position: relative;
-
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    color: #aaa59e;
-
-    text-decoration: none;
-    text-transform: uppercase;
-
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
-.nav a:hover,
-.nav a.active {
-    color: #d7a43e;
-}
-
-.nav a.active::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 2px;
-
-    background: #d4a03b;
-}
-
-
-/* ================================================
-   MAIN LAYOUT
-================================================ */
-
-.site-shell {
-    width: 1080px;
-    max-width: calc(100% - 40px);
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: 190px minmax(0, 1fr);
-
-    min-height: 800px;
-}
-
-
-/* ================================================
-   SIDEBAR
-================================================ */
-
-.sidebar {
-    padding: 27px 30px 80px 0;
-
-    border-right: 1px solid #272727;
-}
-
-.sidebar-section {
-    margin-bottom: 36px;
-}
-
-.sidebar h3 {
-    margin: 0;
-
-    color: #dfc78f;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 13px;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-}
-
-.mini-divider {
-    width: 58px;
-
-    margin: 10px 0 16px;
-
-    padding-top: 2px;
-
-    color: #c69234;
-
-    border-top: 1px solid #49371d;
-
-    font-size: 8px;
-    text-align: center;
-}
-
-.sidebar p {
-    margin: 0;
-
-    color: #9f9b94;
-
-    font-size: 12px;
-    line-height: 1.72;
-}
-
-.room-list {
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-.room-list li {
-    margin-bottom: 10px;
-}
-
-.room-list a {
-    color: #aaa59e;
-
-    font-size: 12px;
-
-    text-decoration: none;
-}
-
-.room-list a:hover,
-.room-list a.current-room {
-    color: #d6a13d;
-}
-
-
-/* ================================================
-   MAIN ROOM
-================================================ */
-
-.main-content {
-    min-width: 0;
-
-    padding: 25px 0 80px 40px;
-}
-
-.room-header {
-    margin-bottom: 19px;
-
-    padding-bottom: 20px;
-
-    border-bottom: 1px solid #292929;
-}
-
-.room-header h2 {
-    margin: 0;
-
-    color: #ded9d1;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 26px;
-    font-weight: normal;
-
-    line-height: 1.15;
-}
-
-.room-header p {
-    margin: 5px 0 0;
-
-    color: #8f8a84;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 12px;
-}
-
-
-/* ================================================
-   DISQUS PREVIEW
-================================================ */
-
-.disqus-preview {
-    width: 100%;
-}
-
-.comment-count {
-    margin: 0 0 13px;
-
-    color: #ccc;
-
-    font-size: 12px;
-}
-
-.disqus-input-row {
-    display: grid;
-
-    grid-template-columns: 47px 1fr;
-
-    gap: 12px;
-
-    align-items: center;
-}
-
-.disqus-user-avatar {
-    width: 44px;
-    height: 44px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #ddd 0%,
-            #aaa 48%,
-            #555 49%,
-            #222 100%
-        );
-}
-
-.disqus-input {
-    height: 52px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 17px;
-
-    color: #747474;
-
-    background: #0c0c0c;
-
-    border: 1px solid #353535;
-    border-radius: 4px;
-
-    font-size: 13px;
-}
-
-.disqus-toolbar {
-    display: flex;
-    align-items: center;
-
-    gap: 13px;
-
-    margin: 15px 0;
-
-    color: #999;
-
-    font-size: 11px;
-}
-
-.sorting {
-    display: flex;
-
-    gap: 22px;
-
-    margin-left: auto;
-}
-
-.sorting .selected {
-    color: #d6a13c;
-
-    padding-bottom: 5px;
-
-    border-bottom: 2px solid #d6a13c;
-}
-
-
-/* ================================================
-   COMMENT CARD
-================================================ */
-
-.comment-card {
-    display: grid;
-
-    grid-template-columns: 46px minmax(0, 1fr);
-
-    gap: 13px;
-
-    margin-bottom: 10px;
-
-    padding: 12px;
-
-    color: #ccc;
-
-    background:
-        linear-gradient(
-            135deg,
-            #171717,
-            #111111
-        );
-
-    border: 1px solid #303030;
-    border-radius: 4px;
-}
-
-.comment-avatar {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #4c5962,
-            #17191b
-        );
-}
-
-.comment-content {
-    min-width: 0;
-}
-
-.comment-name {
-    display: block;
-
-    color: #d6a13c;
-
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.comment-time {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #777;
-
-    font-size: 10px;
-}
-
-.comment-card p {
-    margin: 10px 0 8px;
-
-    color: #d0cfcc;
-
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.comment-actions {
-    display: flex;
-
-    gap: 20px;
-
-    color: #888;
-
-    font-size: 11px;
-}
-
-
-/* second comment */
-
-.comment-card.secondary {
-    min-height: 74px;
-}
-
-
-/* ================================================
-   REAL DISQUS LATER
-================================================ */
-
-#disqus_thread {
-    width: 100%;
-    color-scheme: dark;
-}
-
-
-/* ================================================
-   MOBILE
-================================================ */
-
-@media (max-width: 760px) {
-
-    .hero {
-        height: 230px;
-    }
-
-    .hero-left {
-        width: 58%;
-    }
-
-    .hero-right {
-        width: 58%;
-    }
-
-    .hero-title {
-        width: 92%;
-    }
-
-    .hero-title h1 {
-        font-size: 39px;
-        letter-spacing: 8px;
-    }
-
-    .hero-divider {
-        width: 230px;
-    }
-
-    .hero-title p {
-        font-size: 9px;
-        letter-spacing: 1.8px;
-    }
-
-    .nav {
-        gap: 23px;
-    }
-
-    .nav a {
-        font-size: 9px;
-        letter-spacing: 1px;
-    }
-
-    .site-shell {
-        display: block;
-
-        width: calc(100% - 28px);
-    }
-
-    .sidebar {
-        display: none;
-    }
-
-    .main-content {
-        padding: 24px 0 70px;
-    }
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- =========================
+         HERO
+    ========================== -->
 
-<header class="hero">
+    <header class="hero">
 
-    <img
-        src="./beehive.jpg"
-        class="hero-image hero-left"
-        alt=""
-    >
+        <div class="hero-left"></div>
 
-    <img
-        src="./field.png"
-        class="hero-image hero-right"
-        alt=""
-    >
+        <div class="hero-center">
 
-    <div class="hero-blend"></div>
+            <div class="title-box">
 
+                <h1>MOLOCO</h1>
 
-    <div class="hero-title">
+                <div class="title-divider">
+                    <span>◆</span>
+                </div>
 
-        <h1>MOLOCO</h1>
+                <p>
+                    A PLACE TO TALK ABOUT ANYTHING<br>
+                    THAT MATTERS.
+                </p>
 
+            </div>
 
-        <div class="hero-divider">
-            <span>✦</span>
         </div>
 
+        <div class="hero-right"></div>
 
-        <p>
-            A place to talk about anything<br>
-            that matters.
-        </p>
-
-    </div>
-
-</header>
+    </header>
 
 
-<nav class="nav">
+    <!-- =========================
+         NAV
+    ========================== -->
 
-    <a class="active" href="#">
-        Home
-    </a>
+    <nav class="main-nav">
 
-    <a href="#">
-        Rooms
-    </a>
+        <a class="active" href="#">HOME</a>
 
-    <a href="#">
-        Archive
-    </a>
+        <a href="#">ROOMS</a>
 
-    <a href="#">
-        About
-    </a>
+        <a href="#">ARCHIVE</a>
 
-</nav>
+        <a href="#">ABOUT</a>
+
+    </nav>
 
 
-<div class="site-shell">
+    <!-- =========================
+         SITE CONTENT
+    ========================== -->
+
+    <div class="site-shell">
 
 
-    <aside class="sidebar">
+        <!-- SIDEBAR -->
 
+        <aside class="sidebar">
 
-        <section class="sidebar-section">
+            <section class="sidebar-section">
 
-            <h3>
-                About Moloco
-            </h3>
+                <h3>ABOUT MOLOCO</h3>
 
-            <div class="mini-divider">
-                ✦
-            </div>
-
-            <p>
-                A quiet corner of the internet for
-                conversation, shared interests, and
-                whatever else happens to come up.
-            </p>
-
-        </section>
-
-
-        <section class="sidebar-section">
-
-            <h3>
-                Rooms
-            </h3>
-
-            <div class="mini-divider">
-                ✦
-            </div>
-
-            <ul class="room-list">
-
-                <li>
-                    <a class="current-room" href="#">
-                        Main Room
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Movies
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Music
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Anime
-                    </a>
-                </li>
-
-            </ul>
-
-        </section>
-
-
-    </aside>
-
-
-    <main class="main-content">
-
-
-        <section class="room-header">
-
-            <h2>
-                Moloco · The Main Room
-            </h2>
-
-            <p>
-                Anything goes. Be kind. Keep it real.
-            </p>
-
-        </section>
-
-
-        <section class="disqus-preview">
-
-
-            <div class="comment-count">
-                15795 Comments
-            </div>
-
-
-            <div class="disqus-input-row">
-
-                <div class="disqus-user-avatar"></div>
-
-                <div class="disqus-input">
-                    Join the discussion...
+                <div class="mini-divider">
+                    ◆
                 </div>
 
-            </div>
+                <p>
+                    A quiet corner of the internet for conversation,
+                    shared interests, and whatever else happens to come up.
+                </p>
+
+            </section>
 
 
-            <div class="disqus-toolbar">
+            <section class="sidebar-section">
 
-                <span>♡ 24</span>
+                <h3>ROOMS</h3>
 
-                <span>•</span>
+                <div class="mini-divider">
+                    ◆
+                </div>
 
-                <span>Share</span>
+                <ul class="room-list">
+
+                    <li>
+                        <a class="current-room" href="#">
+                            Main Room
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Movies
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Music
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Anime
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </aside>
 
 
-                <div class="sorting">
+        <!-- MAIN COLUMN -->
 
-                    <span>Best</span>
+        <main class="main-content">
 
-                    <span class="selected">
-                        Newest
-                    </span>
+            <section class="room-header">
 
-                    <span>Oldest</span>
+                <h2>
+                    Moloco · The Main Room
+                </h2>
+
+                <p>
+                    Anything goes. Be kind. Keep it real.
+                </p>
+
+            </section>
+
+
+            <!-- DISQUS PREVIEW -->
+
+            <section class="disqus-preview">
+
+                <div class="comment-count">
+                    15795 Comments
+                </div>
+
+
+                <div class="disqus-input-row">
+
+                    <div class="disqus-user-avatar"></div>
+
+                    <div class="disqus-input">
+                        Join the discussion...
+                    </div>
 
                 </div>
 
-            </div>
+
+                <div class="disqus-toolbar">
+
+                    <span>♡</span>
+
+                    <span>24</span>
+
+                    <span>•</span>
+
+                    <span>Share</span>
 
 
-            <article class="comment-card">
+                    <div class="sorting">
 
-                <div class="comment-avatar"></div>
+                        <span>
+                            Best
+                        </span>
 
+                        <span class="selected">
+                            Newest
+                        </span>
 
-                <div class="comment-content">
-
-                    <span class="comment-name">
-                        Made in Heaven
-                    </span>
-
-                    <span class="comment-time">
-                        9 days ago
-                    </span>
-
-                    <p>
-                        Welcome to Moloco. This preview exists
-                        so we can get the layout and proportions
-                        right before replacing it with the real
-                        Disqus discussion.
-                    </p>
-
-                    <div class="comment-actions">
-
-                        <span>♡ 7</span>
-
-                        <span>Reply</span>
-
-                        <span>Share</span>
+                        <span>
+                            Oldest
+                        </span>
 
                     </div>
 
                 </div>
 
-            </article>
+
+                <!-- COMMENT ONE -->
+
+                <article class="comment-card">
+
+                    <div class="comment-avatar"></div>
 
 
-            <article class="comment-card secondary">
+                    <div class="comment-content">
 
-                <div class="comment-avatar"></div>
+                        <span class="comment-name">
+                            Made in Heaven
+                        </span>
 
-
-                <div class="comment-content">
-
-                    <span class="comment-name">
-                        Cloud
-                    </span>
-
-                    <span class="comment-time">
-                        9 hours ago
-                    </span>
-
-                    <p>
-                        Today is really cold for some reason...
-                    </p>
-
-                </div>
-
-            </article>
+                        <span class="comment-time">
+                            9 days ago
+                        </span>
 
 
-        </section>
+                        <p>
+                            Welcome to Moloco. This preview is here so the
+                            layout and proportions can be tuned before
+                            replacing it with the real Disqus discussion.
+                        </p>
 
 
-    </main>
+                        <div class="comment-actions">
 
-</div>
+                            <span>♡ 7</span>
 
+                            <span>♧ 1</span>
+
+                            <span>Reply</span>
+
+                            <span>↗</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- COMMENT TWO -->
+
+                <article class="comment-card">
+
+                    <div class="comment-avatar"></div>
+
+
+                    <div class="comment-content">
+
+                        <span class="comment-name">
+                            Cloud
+                        </span>
+
+                        <span class="comment-time">
+                            9 hours ago
+                        </span>
+
+
+                        <p>
+                            Today is really cold for some reason...
+                        </p>
+
+
+                        <div class="comment-actions">
+
+                            <span>♡ 4</span>
+
+                            <span>♧ 0</span>
+
+                            <span>Reply</span>
+
+                            <span>↗</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
 
 </body>
+
 </html>
