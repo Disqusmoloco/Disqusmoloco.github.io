@@ -52,6 +52,7 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
+
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -59,6 +60,7 @@ body {
 .hero-left {
     left: 0;
     width: 52%;
+
     background-image: url("beehive.jpg");
     background-position: center 48%;
 }
@@ -66,18 +68,22 @@ body {
 .hero-right {
     right: 0;
     width: 56%;
+
     background-image: url("field.png");
     background-position: center 48%;
 }
 
 
-/* dark center blend */
+/* Dark blend between the two images */
 
 .hero::before {
     content: "";
+
     position: absolute;
     inset: 0;
+
     z-index: 2;
+
     pointer-events: none;
 
     background:
@@ -98,13 +104,16 @@ body {
 }
 
 
-/* bottom vignette */
+/* Slight cinematic darkening toward bottom */
 
 .hero::after {
     content: "";
+
     position: absolute;
     inset: 0;
+
     z-index: 3;
+
     pointer-events: none;
 
     background:
@@ -117,27 +126,36 @@ body {
 
 
 /* =========================================================
-   HERO TITLE
+   HERO CENTER
 ========================================================= */
 
 .hero-center {
     position: absolute;
+
     z-index: 5;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+
     width: 100%;
 }
 
 .title-box {
     width: 470px;
     max-width: 90%;
+
     margin: 0 auto;
+
     text-align: center;
 }
 
+
+/* MOLOCO */
+
 .title-box h1 {
-    margin: 0 0 18px;
+    margin: 0;
 
     color: #eed29a;
 
@@ -148,28 +166,45 @@ body {
 
     font-size: 64px;
     font-weight: normal;
+
     line-height: 1;
+
     letter-spacing: 13px;
 
     text-shadow:
         0 2px 5px rgba(0,0,0,.85);
 }
 
+
+/* =========================================================
+   DECORATIVE DIVIDER
+========================================================= */
+
 .title-divider {
     position: relative;
+
     width: 360px;
     max-width: 90%;
+
     height: 12px;
-    margin: 0 auto 15px;
+
+    margin:
+        18px
+        auto
+        14px;
 }
 
 .title-divider::before,
 .title-divider::after {
     content: "";
+
     position: absolute;
+
     top: 50%;
+
     width: 46%;
     height: 1px;
+
     background: #755724;
 }
 
@@ -183,12 +218,20 @@ body {
 
 .title-divider span {
     position: relative;
+
     top: -3px;
+
     color: #d09a39;
+
     font-size: 9px;
 }
 
-.title-box p {
+
+/* =========================================================
+   HERO TAGLINE
+========================================================= */
+
+.hero-tagline {
     margin: 0;
 
     color: #dac18e;
@@ -199,9 +242,15 @@ body {
         serif;
 
     font-size: 13px;
+
     line-height: 1.35;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
+    text-shadow:
+        0 1px 4px rgba(0,0,0,.9);
 }
 
 
@@ -213,10 +262,9 @@ body {
     height: 48px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
-
-    gap: 58px;
 
     background: #090909;
 
@@ -231,21 +279,18 @@ body {
     display: flex;
     align-items: center;
 
-    color: #aaa59e;
+    color: #d6a23d;
 
     text-decoration: none;
+
     text-transform: uppercase;
 
     font-size: 11px;
+
     letter-spacing: 2px;
 }
 
-.main-nav a:hover,
-.main-nav a.active {
-    color: #d6a23d;
-}
-
-.main-nav a.active::after {
+.main-nav a::after {
     content: "";
 
     position: absolute;
@@ -261,107 +306,17 @@ body {
 
 
 /* =========================================================
-   SITE LAYOUT
+   PAGE
 ========================================================= */
 
-.site-shell {
+.page-shell {
     width: 1260px;
+
     max-width: calc(100% - 40px);
 
     margin: 0 auto;
 
-    display: grid;
-
-    grid-template-columns:
-        220px minmax(0, 1fr);
-
     min-height: 900px;
-}
-
-
-/* =========================================================
-   SIDEBAR
-========================================================= */
-
-.sidebar {
-    padding:
-        34px
-        34px
-        100px
-        0;
-
-    border-right: 1px solid #272727;
-}
-
-.sidebar-section {
-    margin-bottom: 35px;
-}
-
-.sidebar h3 {
-    margin: 0;
-
-    color: #dec78e;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 14px;
-    letter-spacing: 1.3px;
-
-    text-transform: uppercase;
-}
-
-.mini-divider {
-    width: 58px;
-
-    margin:
-        10px
-        0
-        18px;
-
-    padding-top: 2px;
-
-    color: #c69234;
-
-    border-top: 1px solid #48361d;
-
-    font-size: 8px;
-    text-align: center;
-}
-
-.sidebar p {
-    margin: 0;
-
-    color: #9e9992;
-
-    font-size: 13px;
-    line-height: 1.7;
-}
-
-.room-list {
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-.room-list li {
-    margin-bottom: 9px;
-}
-
-.room-list a {
-    color: #aaa59e;
-
-    text-decoration: none;
-
-    font-size: 13px;
-}
-
-.room-list a:hover,
-.room-list a.current-room {
-    color: #d5a13c;
 }
 
 
@@ -370,14 +325,16 @@ body {
 ========================================================= */
 
 .main-content {
-    min-width: 0;
-
     padding:
         32px
         0
-        100px
-        46px;
+        100px;
 }
+
+
+/* =========================================================
+   ROOM HEADER
+========================================================= */
 
 .room-header {
     margin:
@@ -404,35 +361,26 @@ body {
         serif;
 
     font-size: 31px;
+
     font-weight: normal;
+
     line-height: 1.1;
-}
-
-.room-header p {
-    margin: 5px 0 0;
-
-    color: #8f8a83;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 13px;
 }
 
 
 /* =========================================================
-   REAL DISQUS
+   DISQUS
 ========================================================= */
 
 .discussion-area {
     width: 100%;
+
     min-height: 600px;
 }
 
 #disqus_thread {
     width: 100%;
+
     color-scheme: dark;
 }
 
@@ -443,16 +391,10 @@ body {
 
 @media (max-width: 1100px) {
 
-    .site-shell {
+    .page-shell {
         width: 1080px;
-
-        grid-template-columns:
-            190px minmax(0, 1fr);
     }
 
-    .main-content {
-        padding-left: 36px;
-    }
 }
 
 
@@ -469,34 +411,57 @@ body {
 
     .title-box h1 {
         font-size: 45px;
+
         letter-spacing: 8px;
     }
 
     .title-divider {
-        width: 240px;
+        width: 250px;
     }
 
-    .title-box p {
-        font-size: 9px;
-        letter-spacing: 1.8px;
+    .hero-tagline {
+        font-size: 11px;
+
+        letter-spacing: 2px;
     }
 
-    .main-nav {
-        gap: 28px;
-    }
-
-    .site-shell {
-        display: block;
+    .page-shell {
         width: calc(100% - 30px);
     }
 
-    .sidebar {
-        display: none;
+    .room-header h2 {
+        font-size: 26px;
     }
 
-    .main-content {
-        padding-left: 0;
+}
+
+
+@media (max-width: 550px) {
+
+    .hero {
+        height: 200px;
     }
+
+    .title-box h1 {
+        font-size: 36px;
+
+        letter-spacing: 6px;
+    }
+
+    .title-divider {
+        width: 200px;
+
+        margin-top: 15px;
+
+        margin-bottom: 11px;
+    }
+
+    .hero-tagline {
+        font-size: 9px;
+
+        letter-spacing: 1.7px;
+    }
+
 }
 
 </style>
@@ -513,31 +478,47 @@ body {
 
 <header class="hero">
 
+
+    <!-- LEFT IMAGE -->
+
     <div class="hero-left"></div>
+
+
+    <!-- CENTER TITLE -->
 
     <div class="hero-center">
 
         <div class="title-box">
 
+
             <h1>
                 MOLOCO
             </h1>
 
+
             <div class="title-divider">
-                <span>◆</span>
+
+                <span>
+                    ◆
+                </span>
+
             </div>
 
-            <p>
-                A PLACE TO TALK ABOUT ANYTHING
-                <br>
-                THAT MATTERS.
+
+            <p class="hero-tagline">
+                SPIRIT OF THE PEOPLE
             </p>
+
 
         </div>
 
     </div>
 
+
+    <!-- RIGHT IMAGE -->
+
     <div class="hero-right"></div>
+
 
 </header>
 
@@ -549,23 +530,8 @@ body {
 
 <nav class="main-nav">
 
-    <a
-        class="active"
-        href="#"
-    >
+    <a href="#">
         HOME
-    </a>
-
-    <a href="#">
-        ROOMS
-    </a>
-
-    <a href="#">
-        ARCHIVE
-    </a>
-
-    <a href="#">
-        ABOUT
     </a>
 
 </nav>
@@ -573,121 +539,31 @@ body {
 
 
 <!-- =====================================================
-     MAIN SITE
+     PAGE
 ===================================================== -->
 
-<div class="site-shell">
+<div class="page-shell">
 
-
-    <!-- =================================================
-         SIDEBAR
-    ================================================== -->
-
-    <aside class="sidebar">
-
-
-        <section class="sidebar-section">
-
-            <h3>
-                ABOUT MOLOCO
-            </h3>
-
-            <div class="mini-divider">
-                ◆
-            </div>
-
-            <p>
-                A quiet corner of the internet for
-                conversation, shared interests, and
-                whatever else happens to come up.
-            </p>
-
-        </section>
-
-
-
-        <section class="sidebar-section">
-
-            <h3>
-                ROOMS
-            </h3>
-
-            <div class="mini-divider">
-                ◆
-            </div>
-
-            <ul class="room-list">
-
-                <li>
-
-                    <a
-                        class="current-room"
-                        href="#"
-                    >
-                        The Apiary
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="#">
-                        Movies
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="#">
-                        Music
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="#">
-                        Anime
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </section>
-
-
-    </aside>
-
-
-
-    <!-- =================================================
-         THE APIARY
-    ================================================== -->
 
     <main class="main-content">
 
 
+        <!-- =============================================
+             THE APIARY
+        ============================================== -->
+
         <section class="room-header">
 
             <h2>
-                Moloco · The Apiary
+                The Apiary
             </h2>
-
-            <p>
-                Anything goes. Be kind. Keep it real.
-            </p>
 
         </section>
 
 
 
         <!-- =============================================
-             REAL DISQUS THREAD
+             REAL DISQUS
         ============================================== -->
 
         <section class="discussion-area">
@@ -699,21 +575,26 @@ body {
             <script>
 
                 /*
-                 * MOLOCO / THE APIARY
+                 * THE APIARY
                  *
-                 * Keep this identifier the same once
+                 * Keep "the-apiary" unchanged after
                  * people begin commenting.
                  */
 
                 var disqus_config = function () {
 
-                    this.page.identifier = 'the-apiary';
+
+                    this.page.identifier =
+                        'the-apiary';
+
 
                     this.page.title =
-                        'Moloco · The Apiary';
+                        'The Apiary';
+
 
                     this.page.url =
                         window.location.href;
+
 
                 };
 
@@ -724,7 +605,9 @@ body {
 
                 (function () {
 
+
                     var d = document;
+
 
                     var s =
                         d.createElement('script');
@@ -743,7 +626,9 @@ body {
                     (d.head || d.body)
                         .appendChild(s);
 
+
                 })();
+
 
             </script>
 
