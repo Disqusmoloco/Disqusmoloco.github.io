@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f7f7f5;
+    color: #181818;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ===== CINEMATIC HEADER ===== */
+
+.hero {
+    height: 275px;
+    position: relative;
+    overflow: hidden;
+    background: #080706;
+    display: flex;
+}
+
+.hero-image {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.05) 0%,
+            rgba(0,0,0,.2) 30%,
+            rgba(0,0,0,.85) 48%,
+            rgba(0,0,0,.85) 52%,
+            rgba(0,0,0,.2) 70%,
+            rgba(0,0,0,.05) 100%
+        );
+}
+
+.hero-title {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f1d598;
+    width: 600px;
+}
+
+.hero-title h1 {
+    margin: 0;
+    font-size: 64px;
+    font-weight: normal;
+    letter-spacing: 14px;
+}
+
+.hero-title p {
+    margin: 16px 0 0;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* ===== NAVIGATION ===== */
+
+nav {
+    height: 54px;
+    background: #0b0b0b;
+    border-top: 1px solid #493817;
+    border-bottom: 1px solid #252525;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+}
+
+nav a {
+    color: #cfc5b4;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav a:hover,
+nav a.active {
+    color: #d9a93c;
+}
+
+/* ===== PAGE ===== */
+
+.page {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    min-height: 700px;
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+    padding: 38px 30px 40px 0;
+    border-right: 1px solid #ddddda;
+}
+
+.sidebar h3 {
+    margin: 0 0 18px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.sidebar p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.sidebar-rule {
+    width: 28px;
+    border: 0;
+    border-top: 1px solid #aaa;
+    margin: 25px 0;
+}
+
+/* ===== CHAT AREA ===== */
+
+.chat {
+    padding: 34px 0 80px 48px;
+}
+
+.room-heading {
+    margin-bottom: 28px;
+}
+
+.room-heading h2 {
+    margin: 0;
+    font-size: 27px;
+    font-weight: normal;
+}
+
+.room-heading p {
+    margin: 6px 0 0;
+    color: #666;
+    font-size: 15px;
+}
+
+/* Temporary box — Disqus goes here later */
+
+.disqus-placeholder {
+    border-top: 1px solid #ddd;
+    padding-top: 25px;
+}
+
+.comment-box {
+    border: 1px solid #d5d5d5;
+    min-height: 110px;
+    background: white;
+    padding: 20px;
+    color: #888;
+    font-family: Arial, sans-serif;
+}
+
+.fake-comment {
+    display: flex;
+    gap: 15px;
+    padding: 25px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    border-radius: 50%;
+    background: #222;
+}
+
+.fake-comment strong {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.fake-comment p {
+    margin: 7px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 750px) {
+
+    .hero {
+        height: 210px;
+    }
+
+    .hero-title h1 {
+        font-size: 38px;
+        letter-spacing: 8px;
+    }
+
+    .hero-title p {
+        font-size: 10px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .page {
+        display: block;
+        width: calc(100% - 30px);
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .chat {
+        padding: 30px 0 60px;
+    }
+}
