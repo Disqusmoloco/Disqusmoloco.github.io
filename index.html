@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Moloco · The Apiary</title>
+<title>Moloco</title>
 
 <style>
 
@@ -204,7 +204,7 @@ body {
     margin:
         18px
         auto
-        14px;
+        0;
 }
 
 .title-divider::before,
@@ -237,33 +237,6 @@ body {
     color: #d09a39;
 
     font-size: 9px;
-}
-
-
-/* =========================================================
-   SPIRIT OF THE PEOPLE
-========================================================= */
-
-.hero-tagline {
-    margin: 0;
-
-    color: #dac18e;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 13px;
-
-    line-height: 1.35;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0 1px 4px rgba(0,0,0,.9);
 }
 
 
@@ -349,7 +322,7 @@ body {
 
 
 /* =========================================================
-   THE APIARY HEADER
+   MAIN CHATROOM HEADER
 ========================================================= */
 
 .room-header {
@@ -367,6 +340,8 @@ body {
         18px;
 
     border-bottom: 1px solid #292929;
+
+    text-align: center;
 }
 
 .room-header h2 {
@@ -379,11 +354,13 @@ body {
         "Times New Roman",
         serif;
 
-    font-size: 31px;
+    font-size: 34px;
 
     font-weight: normal;
 
     line-height: 1.1;
+
+    letter-spacing: 3px;
 }
 
 
@@ -451,11 +428,6 @@ body {
         width: 250px;
     }
 
-    .hero-tagline {
-        font-size: 11px;
-        letter-spacing: 2px;
-    }
-
     .page-shell {
         padding:
             0
@@ -467,7 +439,7 @@ body {
     }
 
     .room-header h2 {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .disqus-shell {
@@ -495,12 +467,6 @@ body {
         width: 200px;
 
         margin-top: 15px;
-        margin-bottom: 11px;
-    }
-
-    .hero-tagline {
-        font-size: 9px;
-        letter-spacing: 1.7px;
     }
 
     .page-shell {
@@ -511,6 +477,11 @@ body {
 
     .main-content {
         padding-top: 24px;
+    }
+
+    .room-header h2 {
+        font-size: 23px;
+        letter-spacing: 2px;
     }
 
     .disqus-shell {
@@ -563,11 +534,6 @@ body {
             </div>
 
 
-            <p class="hero-tagline">
-                SPIRIT OF THE PEOPLE
-            </p>
-
-
         </div>
 
     </div>
@@ -607,13 +573,13 @@ body {
 
 
         <!-- =============================================
-             THE APIARY
+             MAIN CHATROOM
         ============================================== -->
 
         <section class="room-header">
 
             <h2>
-                The Apiary
+                ≠ MAIN CHATROOM ≠
             </h2>
 
         </section>
@@ -638,21 +604,18 @@ body {
                 <script>
 
                     /*
-                     * THE APIARY
-                     *
-                     * IMPORTANT:
-                     * Keep this identifier the same.
+                     * MAIN CHATROOM
                      */
 
                     var disqus_config = function () {
 
 
                         this.page.identifier =
-                            'the-apiary';
+                            'main-chatroom';
 
 
                         this.page.title =
-                            'The Apiary';
+                            'Main Chatroom';
 
 
                         this.page.url =
