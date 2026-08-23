@@ -8,9 +8,18 @@
 <title>Moloco</title>
 
 <style>
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-html { background: #080808; }
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #080808;
+}
 
 body {
     background: #080808;
@@ -18,7 +27,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-a { color: #bdbdbd; }
+a {
+    color: #bdbdbd;
+}
 
 
 /* =====================================================
@@ -123,6 +134,26 @@ a { color: #bdbdbd; }
 
 
 /* =====================================================
+   CHATROOM IMAGE
+===================================================== */
+
+.chatroom-image {
+    width: 760px;
+    max-width: 100%;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.chatroom-image img {
+    display: block;
+    width: 270px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
    DISQUS
 ===================================================== */
 
@@ -209,6 +240,10 @@ a { color: #bdbdbd; }
         letter-spacing: 2px;
     }
 
+    .chatroom-image img {
+        width: 270px;
+    }
+
     .disqus-shell {
         padding: 14px 12px 20px;
     }
@@ -271,6 +306,18 @@ a { color: #bdbdbd; }
             </h2>
 
         </section>
+
+
+
+        <!-- =============================================
+             CHATROOM IMAGE
+        ============================================== -->
+
+        <div class="chatroom-image">
+
+            <img src="field(2).jpg" alt="">
+
+        </div>
 
 
 
