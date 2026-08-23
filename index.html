@@ -110,8 +110,13 @@ a:hover {
 .welcome-image img {
     display: block;
 
-    width: auto;
-    max-width: 100%;
+    /*
+       Smaller Welcome.
+    */
+
+    width: 270px;
+    max-width: 80%;
+
     height: auto;
 
     margin: 0 auto;
@@ -211,13 +216,19 @@ a:hover {
 
     min-height: 1600px;
 
+    /*
+       Blue begins exactly where the
+       Disqus section begins.
+    */
+
     padding: 0 20px 140px;
 
     /*
-       One continuous blue.
+       One continuous deep blue.
+
        No ocean image.
-       No repeating texture.
-       No gradient or halfway seam.
+       No gradient.
+       No repeating background.
     */
 
     background: #02111c;
@@ -251,13 +262,7 @@ a:hover {
 
 
 /* =====================================================
-   BLUE LINK / USERNAME COLOR
-
-   This restores Moloco's blue link color for
-   anything Disqus exposes to the parent page.
-
-   Disqus iframe contents may still use their
-   own internal styling.
+   BLUE LINKS / USERNAMES
 ===================================================== */
 
 #disqus_thread a {
@@ -293,9 +298,8 @@ a:hover {
     /* WELCOME */
 
     .welcome-image img {
-        width: auto;
-
-        max-width: 100%;
+        width: 250px;
+        max-width: 80%;
     }
 
 
@@ -367,9 +371,8 @@ a:hover {
     }
 
     .welcome-image img {
-        width: auto;
-
-        max-width: 100%;
+        width: 220px;
+        max-width: 85%;
 
         height: auto;
     }
