@@ -8,11 +8,17 @@
 <title>Moloco</title>
 
 <style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -33,7 +39,7 @@ a {
 
 
 /* =====================================================
-   HEADER
+   MOLOCO HEADER
 ===================================================== */
 
 .site-header {
@@ -41,53 +47,25 @@ a {
     display: flex;
     align-items: flex-start;
     padding: 24px 20px 0;
+
+    background: #080808;
+
     border-bottom: 1px solid #202020;
 }
 
 .site-title {
     margin: 0;
+
     color: #9b9b9b;
+
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 26px;
     font-weight: normal;
+
     line-height: 1;
+
     letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.main-nav {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #090909;
-    border-bottom: 1px solid #242424;
-}
-
-.main-nav a {
-    position: relative;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    color: #b7b7b7;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
-.main-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: #9a9a9a;
 }
 
 
@@ -98,57 +76,120 @@ a {
 .page-shell {
     width: 100%;
     min-height: 900px;
+
     padding: 0 20px;
 }
 
 .main-content {
     width: 800px;
     max-width: 100%;
+
     margin: 0 auto;
-    padding: 32px 0 100px;
+
+    padding: 22px 0 100px;
 }
 
 
 /* =====================================================
-   ROOM HEADER
+   TECHNOLOGICAL WELCOME
+===================================================== */
+
+.welcome-image {
+    width: 100%;
+
+    margin: 0 auto 14px;
+
+    text-align: center;
+}
+
+.welcome-image img {
+    display: block;
+
+    width: 320px;
+    max-width: 80%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+.main-nav {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.main-nav a {
+    color: #b7b7b7;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   MAIN CHATROOM
 ===================================================== */
 
 .room-header {
     width: 760px;
     max-width: 100%;
-    margin: 0 auto 26px;
-    padding: 0 0 20px;
-    border-bottom: 1px solid #292929;
+
+    margin: 0 auto 18px;
+
     text-align: center;
 }
 
 .room-header h2 {
     margin: 0;
+
     color: #dedede;
+
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 31px;
+
+    font-size: 21px;
     font-weight: normal;
+
     line-height: 1.1;
+
     letter-spacing: 3px;
 }
 
 
 /* =====================================================
-   CHATROOM IMAGE
+   BEACH IMAGE
 ===================================================== */
 
 .chatroom-image {
     width: 760px;
     max-width: 100%;
-    margin: 0 auto 30px;
+
+    margin: 0 auto 24px;
+
     text-align: center;
 }
 
 .chatroom-image img {
     display: block;
-    width: 270px;
-    max-width: 100%;
+
+    width: 100%;
     height: auto;
+
     margin: 0 auto;
 }
 
@@ -159,23 +200,41 @@ a {
 
 .discussion-area {
     width: 100%;
+
     min-height: 600px;
 }
 
 .disqus-shell {
     width: 760px;
     max-width: 100%;
+
     margin: 0 auto;
+
     padding: 22px 26px 30px;
+
     background: #0b0b0b;
+
     border: 1px solid #262626;
+
     border-radius: 3px;
 }
 
 #disqus_thread {
     width: 100%;
+
     color-scheme: dark;
 }
+
+
+/*
+   IMPORTANT:
+
+   There is intentionally NO custom username
+   coloring here.
+
+   This allows Disqus to use its normal
+   username/link colors again.
+*/
 
 
 /* =====================================================
@@ -186,6 +245,7 @@ a {
 
     .site-header {
         height: 78px;
+
         padding: 20px 15px 0;
     }
 
@@ -198,16 +258,21 @@ a {
     }
 
     .main-content {
-        padding-top: 28px;
+        padding-top: 20px;
+    }
+
+    .welcome-image img {
+        width: 280px;
     }
 
     .room-header h2 {
-        font-size: 25px;
+        font-size: 19px;
     }
 
     .disqus-shell {
         padding: 18px 18px 24px;
     }
+
 }
 
 
@@ -219,11 +284,13 @@ a {
 
     .site-header {
         height: 66px;
+
         padding: 17px 12px 0;
     }
 
     .site-title {
         font-size: 20px;
+
         letter-spacing: .5px;
     }
 
@@ -232,21 +299,60 @@ a {
     }
 
     .main-content {
-        padding-top: 24px;
+        padding-top: 18px;
+    }
+
+
+    /* WELCOME */
+
+    .welcome-image {
+        margin-bottom: 12px;
+    }
+
+    .welcome-image img {
+        width: 230px;
+
+        max-width: 85%;
+    }
+
+
+    /* HOME */
+
+    .main-nav {
+        margin-bottom: 8px;
+    }
+
+    .main-nav a {
+        font-size: 10px;
+    }
+
+
+    /* MAIN CHATROOM */
+
+    .room-header {
+        margin-bottom: 14px;
     }
 
     .room-header h2 {
-        font-size: 21px;
+        font-size: 17px;
+
         letter-spacing: 2px;
     }
 
-    .chatroom-image img {
-        width: 270px;
+
+    /* BEACH */
+
+    .chatroom-image {
+        margin-bottom: 18px;
     }
+
+
+    /* DISQUS */
 
     .disqus-shell {
         padding: 14px 12px 20px;
     }
+
 }
 
 </style>
@@ -258,10 +364,10 @@ a {
 
 
 <!-- =====================================================
-     HEADER
+     MOLOCO
 ===================================================== -->
 
-<header class="site-header" aria-label="Moloco">
+<header class="site-header">
 
     <h1 class="site-title">
         Moloco.
@@ -272,143 +378,160 @@ a {
 
 
 <!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
-<nav class="main-nav">
-
-    <a href="https://disqusmoloco.github.io/">
-        HOME
-    </a>
-
-</nav>
-
-
-
-<!-- =====================================================
      PAGE
 ===================================================== -->
 
 <div class="page-shell">
 
 
-    <main class="main-content">
-
-
-        <!-- =============================================
-             MAIN CHATROOM
-        ============================================== -->
-
-        <section class="room-header">
-
-            <h2>
-                ≠ MAIN CHATROOM ≠
-            </h2>
-
-        </section>
+<main class="main-content">
 
 
 
-        <!-- =============================================
-             CHATROOM IMAGE
-        ============================================== -->
+    <!-- =================================================
+         WELCOME
+    ================================================== -->
 
-        <div class="chatroom-image">
+    <div class="welcome-image">
 
-            <img src="field(2).jpg" alt="">
+        <img
+            src="welcome.png"
+            alt="Welcome"
+        >
+
+    </div>
+
+
+
+    <!-- =================================================
+         HOME
+    ================================================== -->
+
+    <nav class="main-nav">
+
+        <a href="https://disqusmoloco.github.io/">
+            HOME
+        </a>
+
+    </nav>
+
+
+
+    <!-- =================================================
+         MAIN CHATROOM
+    ================================================== -->
+
+    <section class="room-header">
+
+        <h2>
+            ≠ MAIN CHATROOM ≠
+        </h2>
+
+    </section>
+
+
+
+    <!-- =================================================
+         BEACH IMAGE
+    ================================================== -->
+
+    <div class="chatroom-image">
+
+        <img
+            src="beach.png"
+            alt=""
+        >
+
+    </div>
+
+
+
+    <!-- =================================================
+         DISQUS
+    ================================================== -->
+
+    <section class="discussion-area">
+
+
+        <div class="disqus-shell">
+
+
+            <div id="disqus_thread"></div>
+
+
+            <script>
+
+                /*
+                 * MAIN CHATROOM
+                 */
+
+                var disqus_config = function () {
+
+
+                    this.page.identifier =
+                        'main-chatroom';
+
+
+                    this.page.title =
+                        'Main Chatroom';
+
+
+                    this.page.url =
+                        'https://disqusmoloco.github.io/';
+
+
+                };
+
+
+                /*
+                 * LOAD DISQUS
+                 */
+
+                (function () {
+
+
+                    var d = document;
+
+
+                    var s =
+                        d.createElement('script');
+
+
+                    s.src =
+                        'https://disqusmoloco.disqus.com/embed.js';
+
+
+                    s.setAttribute(
+                        'data-timestamp',
+                        +new Date()
+                    );
+
+
+                    (d.head || d.body)
+                        .appendChild(s);
+
+
+                })();
+
+
+            </script>
+
+
+            <noscript>
+
+                Please enable JavaScript to view
+                the comments powered by Disqus.
+
+            </noscript>
+
 
         </div>
 
 
-
-        <!-- =============================================
-             DISCUSSION
-        ============================================== -->
-
-        <section class="discussion-area">
+    </section>
 
 
-            <div class="disqus-shell">
-
-
-                <!-- REAL DISQUS -->
-
-                <div id="disqus_thread"></div>
-
-
-                <script>
-
-                    /*
-                     * MAIN CHATROOM
-                     */
-
-                    var disqus_config = function () {
-
-
-                        this.page.identifier =
-                            'main-chatroom';
-
-
-                        this.page.title =
-                            'Main Chatroom';
-
-
-                        this.page.url =
-                            'https://disqusmoloco.github.io/';
-
-
-                    };
-
-
-                    /*
-                     * LOAD DISQUS
-                     */
-
-                    (function () {
-
-
-                        var d = document;
-
-
-                        var s =
-                            d.createElement('script');
-
-
-                        s.src =
-                            'https://disqusmoloco.disqus.com/embed.js';
-
-
-                        s.setAttribute(
-                            'data-timestamp',
-                            +new Date()
-                        );
-
-
-                        (d.head || d.body)
-                            .appendChild(s);
-
-
-                    })();
-
-
-                </script>
-
-
-                <noscript>
-
-                    Please enable JavaScript to view
-                    the comments powered by Disqus.
-
-                </noscript>
-
-
-            </div>
-
-
-        </section>
-
-
-    </main>
+</main>
 
 
 </div>
