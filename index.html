@@ -34,7 +34,11 @@ body {
 }
 
 a {
-    color: #bdbdbd;
+    color: #4da3d9;
+}
+
+a:hover {
+    color: #75bce8;
 }
 
 
@@ -106,12 +110,6 @@ a {
 .welcome-image img {
     display: block;
 
-    /*
-       Uses the actual welcome.png naturally.
-       It only shrinks when the screen becomes
-       narrower than the image itself.
-    */
-
     width: auto;
     max-width: 100%;
     height: auto;
@@ -145,6 +143,10 @@ a {
     font-size: 11px;
 
     letter-spacing: 2px;
+}
+
+.main-nav a:hover {
+    color: #d5d5d5;
 }
 
 
@@ -185,13 +187,6 @@ a {
     width: 760px;
     max-width: calc(100% - 40px);
 
-    /*
-       No bottom margin.
-
-       The solid blue section begins
-       immediately after the beach image.
-    */
-
     margin: 0 auto;
 
     text-align: center;
@@ -208,14 +203,7 @@ a {
 
 
 /* =====================================================
-   BLUE DISCUSSION AREA
-
-   No ocean image.
-   No repeating image.
-   No gradient.
-   No halfway transition.
-
-   Just one continuous deep blue.
+   SOLID BLUE DISCUSSION AREA
 ===================================================== */
 
 .discussion-area {
@@ -223,12 +211,14 @@ a {
 
     min-height: 1600px;
 
-    /*
-       Zero top padding means the blue begins
-       exactly where the Disqus section begins.
-    */
-
     padding: 0 20px 140px;
+
+    /*
+       One continuous blue.
+       No ocean image.
+       No repeating texture.
+       No gradient or halfway seam.
+    */
 
     background: #02111c;
 }
@@ -260,11 +250,23 @@ a {
 }
 
 
-/*
-   No custom username coloring.
+/* =====================================================
+   BLUE LINK / USERNAME COLOR
 
-   Disqus can use its normal username/link colors.
-*/
+   This restores Moloco's blue link color for
+   anything Disqus exposes to the parent page.
+
+   Disqus iframe contents may still use their
+   own internal styling.
+===================================================== */
+
+#disqus_thread a {
+    color: #4da3d9 !important;
+}
+
+#disqus_thread a:hover {
+    color: #75bce8 !important;
+}
 
 
 /* =====================================================
@@ -520,8 +522,6 @@ a {
 
     <!-- =================================================
          SOLID BLUE + DISQUS
-
-         Solid blue begins exactly here.
     ================================================== -->
 
     <section class="discussion-area">
