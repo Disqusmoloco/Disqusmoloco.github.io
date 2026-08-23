@@ -30,7 +30,6 @@ html {
 body {
     background: #02111c;
     color: #d7d7d7;
-
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -41,19 +40,11 @@ a {
 
 /* =====================================================
    BANNER
-
-   IMPORTANT:
-   There is NO forced height.
-   There is NO object-fit: cover.
-   There is NO cropping.
-
-   The complete banner.png will be displayed.
+   Full artwork visible, but NOT enormous.
 ===================================================== */
 
 .channel-banner {
     width: 100%;
-
-    margin: 0;
     padding: 0;
 
     background: #02111c;
@@ -62,11 +53,12 @@ a {
 .channel-banner img {
     display: block;
 
-    width: 100%;
+    width: 1180px;
+    max-width: 100%;
+
     height: auto;
 
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
 }
 
 
@@ -84,6 +76,7 @@ a {
 
     background: #071827;
 
+    border-top: 1px solid #173044;
     border-bottom: 1px solid #173044;
 }
 
@@ -93,7 +86,6 @@ a {
     color: #d2d2d2;
 
     font-size: 11px;
-
     letter-spacing: 2px;
 
     text-decoration: none;
@@ -122,7 +114,6 @@ a {
 
 .channel-area {
     width: 100%;
-
     min-height: 1500px;
 
     padding: 24px 20px 120px;
@@ -155,8 +146,6 @@ a {
 
 /* =====================================================
    CHAT
-
-   Keeping this at the smaller size you liked.
 ===================================================== */
 
 .chat-column {
@@ -187,8 +176,6 @@ a {
 
 /* =====================================================
    SIDEBAR
-
-   Keeping the smaller old-Disqus proportions.
 ===================================================== */
 
 .channel-sidebar {
@@ -219,7 +206,7 @@ a {
 
 
 /* =====================================================
-   SMALL ROUND ICON
+   SMALL ICON
 ===================================================== */
 
 .sidebar-icon {
@@ -292,9 +279,6 @@ a {
 
 /* =====================================================
    TABLET
-
-   Notice that we DO NOT change the banner height.
-   It continues scaling naturally.
 ===================================================== */
 
 @media (max-width: 900px) {
@@ -310,36 +294,24 @@ a {
 
 /* =====================================================
    MOBILE
-
-   Again, NO banner cropping.
 ===================================================== */
 
 @media (max-width: 700px) {
 
-    /*
-       Sidebar goes above comments on small screens.
-    */
-
     .channel-layout {
         display: flex;
-
         flex-direction: column;
     }
 
     .channel-sidebar {
         width: 100%;
-
         order: 1;
     }
 
     .chat-column {
         width: 100%;
-
         order: 2;
     }
-
-
-    /* PAGE */
 
     .channel-area {
         padding:
@@ -347,15 +319,9 @@ a {
             80px;
     }
 
-
-    /* SIDEBAR */
-
     .sidebar-main {
         padding: 18px;
     }
-
-
-    /* DISQUS */
 
     .disqus-inner {
         padding:
@@ -374,9 +340,7 @@ a {
 
 
 <!-- =====================================================
-     FULL MOLOCO BANNER
-
-     banner.png is displayed at its complete aspect ratio.
+     MOLOCO BANNER
 ===================================================== -->
 
 <header class="channel-banner">
@@ -414,9 +378,8 @@ a {
     <div class="channel-layout">
 
 
-
         <!-- =============================================
-             REAL DISQUS CHATROOM
+             CHATROOM
         ============================================== -->
 
         <main class="chat-column">
@@ -429,10 +392,6 @@ a {
 
 
                 <script>
-
-                    /*
-                     * MOLOCO MAIN CHATROOM
-                     */
 
                     var disqus_config = function () {
 
@@ -447,10 +406,6 @@ a {
 
                     };
 
-
-                    /*
-                     * LOAD DISQUS
-                     */
 
                     (function () {
 
@@ -476,10 +431,8 @@ a {
 
 
                 <noscript>
-
                     Please enable JavaScript to view
                     the comments powered by Disqus.
-
                 </noscript>
 
 
@@ -491,7 +444,7 @@ a {
 
 
         <!-- =============================================
-             MOLOCO INFORMATION
+             MOLOCO INFO
         ============================================== -->
 
         <aside class="channel-sidebar">
@@ -499,10 +452,6 @@ a {
 
             <div class="sidebar-main">
 
-
-                <!-- =====================================
-                     NAME + SMALL ICON
-                ====================================== -->
 
                 <div class="sidebar-name">
 
@@ -525,10 +474,6 @@ a {
                 </div>
 
 
-
-                <!-- =====================================
-                     INTRODUCTION
-                ====================================== -->
 
                 <div class="channel-intro">
 
