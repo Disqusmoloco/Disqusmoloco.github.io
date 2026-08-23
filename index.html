@@ -107,14 +107,13 @@ a {
     display: block;
 
     /*
-       Use the full welcome.png naturally.
-       It only shrinks if the screen is too narrow.
+       Uses the actual welcome.png naturally.
+       It only shrinks when the screen becomes
+       narrower than the image itself.
     */
 
     width: auto;
-
     max-width: 100%;
-
     height: auto;
 
     margin: 0 auto;
@@ -189,8 +188,8 @@ a {
     /*
        No bottom margin.
 
-       The underwater section begins immediately
-       after the beach image.
+       The solid blue section begins
+       immediately after the beach image.
     */
 
     margin: 0 auto;
@@ -209,14 +208,14 @@ a {
 
 
 /* =====================================================
-   UNDERWATER AREA
+   BLUE DISCUSSION AREA
 
-   Ocean begins EXACTLY where Disqus begins.
+   No ocean image.
+   No repeating image.
+   No gradient.
+   No halfway transition.
 
-   It does NOT repeat.
-
-   Instead, it naturally fades into a matching
-   dark navy background near the bottom.
+   Just one continuous deep blue.
 ===================================================== */
 
 .discussion-area {
@@ -224,34 +223,14 @@ a {
 
     min-height: 1600px;
 
+    /*
+       Zero top padding means the blue begins
+       exactly where the Disqus section begins.
+    */
+
     padding: 0 20px 140px;
 
-    background-color: #02111c;
-
-    background-image:
-
-        linear-gradient(
-            to bottom,
-            rgba(2, 17, 28, 0) 0%,
-            rgba(2, 17, 28, 0) 60%,
-            rgba(2, 17, 28, 0.35) 75%,
-            rgba(2, 17, 28, 0.75) 90%,
-            #02111c 100%
-        ),
-
-        url("ocean.png");
-
-    background-size:
-        100% auto,
-        100% auto;
-
-    background-position:
-        center top,
-        center top;
-
-    background-repeat:
-        no-repeat,
-        no-repeat;
+    background: #02111c;
 }
 
 
@@ -282,11 +261,9 @@ a {
 
 
 /*
-   There is intentionally NO custom username
-   coloring here.
+   No custom username coloring.
 
-   This allows Disqus to use its normal
-   username/link colors.
+   Disqus can use its normal username/link colors.
 */
 
 
@@ -338,22 +315,14 @@ a {
     }
 
 
-    /* UNDERWATER */
+    /* BLUE AREA */
 
     .discussion-area {
+        min-height: 1400px;
+
         padding: 0 15px 120px;
 
-        background-size:
-            auto 800px,
-            auto 800px;
-
-        background-position:
-            center top,
-            center top;
-
-        background-repeat:
-            no-repeat,
-            no-repeat;
+        background: #02111c;
     }
 
 
@@ -396,11 +365,6 @@ a {
     }
 
     .welcome-image img {
-        /*
-           Do NOT squeeze Welcome down to 230px.
-           It scales naturally to the phone width.
-        */
-
         width: auto;
 
         max-width: 100%;
@@ -444,26 +408,14 @@ a {
     }
 
 
-    /* UNDERWATER */
+    /* BLUE AREA */
 
     .discussion-area {
         min-height: 1200px;
 
         padding: 0 10px 100px;
 
-        background-color: #02111c;
-
-        background-size:
-            auto 700px,
-            auto 700px;
-
-        background-position:
-            center top,
-            center top;
-
-        background-repeat:
-            no-repeat,
-            no-repeat;
+        background: #02111c;
     }
 
 
@@ -567,7 +519,9 @@ a {
 
 
     <!-- =================================================
-         UNDERWATER + DISQUS
+         SOLID BLUE + DISQUS
+
+         Solid blue begins exactly here.
     ================================================== -->
 
     <section class="discussion-area">
