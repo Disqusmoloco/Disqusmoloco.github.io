@@ -28,129 +28,65 @@ html {
 }
 
 body {
+    margin: 0;
+
     background: #02111c;
     color: #d7d7d7;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-a {
-    color: #4da3d9;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* =====================================================
-   CHANNEL BANNER
+   BANNER
 ===================================================== */
 
 .channel-banner {
     width: 100%;
-    height: 250px;
+    height: 390px;
 
-    position: relative;
     overflow: hidden;
 
-    background: #080808;
+    background: #020d17;
 }
 
 .channel-banner img {
+    display: block;
+
     width: 100%;
     height: 100%;
-
-    display: block;
 
     object-fit: cover;
     object-position: center;
 }
 
 
-/* Dark overlay */
-
-.channel-banner::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.72) 0%,
-            rgba(0, 0, 0, 0.30) 40%,
-            rgba(0, 0, 0, 0.05) 75%
-        );
-
-    pointer-events: none;
-}
-
-
 /* =====================================================
-   BANNER TITLE
-===================================================== */
-
-.banner-title {
-    position: absolute;
-
-    left: max(30px, calc((100% - 1180px) / 2));
-
-    bottom: 35px;
-
-    z-index: 2;
-}
-
-.banner-title h1 {
-    margin: 0;
-
-    color: #e0e0e0;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 46px;
-    font-weight: normal;
-
-    letter-spacing: 1px;
-}
-
-.banner-title p {
-    margin: 7px 0 0;
-
-    color: #c0c0c0;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 16px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   NAVIGATION
+   HOME BAR
 ===================================================== */
 
 .channel-nav {
     width: 100%;
-    height: 55px;
+    height: 54px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    background: #071827;
+    background: #031528;
 
-    border-bottom: 1px solid #173044;
+    border-bottom: 1px solid #294052;
 }
 
 .channel-nav a {
     position: relative;
 
-    color: #d2d2d2;
+    color: #e1e1e1;
 
-    font-size: 11px;
-
-    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: bold;
 
     text-decoration: none;
-
     text-transform: uppercase;
 }
 
@@ -159,33 +95,38 @@ a {
 
     position: absolute;
 
-    left: 0;
-    right: 0;
-
+    left: 50%;
     bottom: -19px;
 
+    width: 62px;
     height: 2px;
+
+    transform: translateX(-50%);
 
     background: #4da3d9;
 }
 
 
 /* =====================================================
-   CHANNEL BODY
+   MAIN BLUE AREA
 ===================================================== */
 
 .channel-area {
     width: 100%;
-
-    min-height: 1500px;
+    min-height: 1600px;
 
     padding: 24px 20px 120px;
 
     background: #02111c;
 }
 
+
+/* =====================================================
+   TWO COLUMN LAYOUT
+===================================================== */
+
 .channel-layout {
-    width: 1180px;
+    width: 1380px;
     max-width: 100%;
 
     margin: 0 auto;
@@ -194,7 +135,7 @@ a {
 
     grid-template-columns:
         minmax(0, 1fr)
-        300px;
+        400px;
 
     gap: 18px;
 
@@ -203,44 +144,19 @@ a {
 
 
 /* =====================================================
-   CHAT COLUMN
+   DISQUS AREA
 ===================================================== */
 
 .chat-column {
     min-width: 0;
 
-    background: #0b0b0b;
+    padding: 20px 24px 28px;
 
-    border: 1px solid #26333c;
+    background: #03101d;
 
-    border-radius: 2px;
-}
+    border: 1px solid #294052;
 
-.chat-heading {
-    padding: 17px 22px;
-
-    color: #c4ccd1;
-
-    background: #0d1216;
-
-    border-bottom: 1px solid #26333c;
-
-    font-size: 13px;
-
-    letter-spacing: 1px;
-}
-
-.chat-heading span {
-    color: #4da3d9;
-}
-
-
-/* =====================================================
-   DISQUS
-===================================================== */
-
-.disqus-inner {
-    padding: 20px 22px 30px;
+    border-radius: 5px;
 }
 
 #disqus_thread {
@@ -251,70 +167,77 @@ a {
 
 
 /* =====================================================
-   RIGHT SIDEBAR
+   MOLOCO SIDEBAR
 ===================================================== */
 
 .channel-sidebar {
-    background: #0d1d2b;
+    background: #04182b;
 
-    border: 1px solid #203447;
+    border: 1px solid #294052;
 
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 .sidebar-main {
-    padding: 22px;
+    padding: 25px 24px 28px;
 }
 
 
 /* =====================================================
-   SIDEBAR NAME
+   SIDEBAR TITLE
 ===================================================== */
 
 .sidebar-name {
     display: flex;
-
     align-items: center;
 
-    gap: 12px;
+    gap: 16px;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 
-/* Round Moloco icon */
+/* =====================================================
+   ROUND ICON
+===================================================== */
 
 .sidebar-icon {
-    width: 44px;
-    height: 44px;
+    width: 74px;
+    height: 74px;
 
-    flex: 0 0 44px;
-
-    border-radius: 50%;
+    flex: 0 0 74px;
 
     overflow: hidden;
 
-    border: 1px solid #395063;
+    border: 1px solid #40566a;
+    border-radius: 50%;
 }
 
 .sidebar-icon img {
+    display: block;
+
     width: 100%;
     height: 100%;
-
-    display: block;
 
     object-fit: cover;
 }
 
+
+/* =====================================================
+   MOLOCO NAME
+===================================================== */
+
 .sidebar-name h2 {
     margin: 0;
 
-    color: #eeeeee;
+    color: #eee7dc;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 22px;
+    font-size: 38px;
     font-weight: normal;
+
+    line-height: 1;
 }
 
 
@@ -323,69 +246,41 @@ a {
 ===================================================== */
 
 .channel-intro {
-    color: #aeb8bf;
+    color: #e0e0e0;
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
 
-    font-size: 14px;
-
-    line-height: 1.65;
+    line-height: 1.55;
 }
 
 .channel-intro p {
-    margin: 0 0 14px;
+    margin: 0 0 20px;
 }
 
 .channel-intro p:last-child {
     margin-bottom: 0;
 }
 
-.channel-intro strong {
-    color: #e0e5e8;
+.channel-intro .welcome {
+    color: #82b8e3;
 
-    font-weight: normal;
-}
-
-
-/* =====================================================
-   SIDEBAR DIVIDER
-===================================================== */
-
-.sidebar-divider {
-    height: 1px;
-
-    margin: 22px 0;
-
-    background: #263b4c;
-}
-
-
-/* =====================================================
-   ROOM
-===================================================== */
-
-.sidebar-room-label {
-    margin-bottom: 8px;
-
-    color: #718594;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.sidebar-room {
-    color: #4da3d9;
-
-    font-size: 12px;
-
+    font-size: 17px;
     font-weight: bold;
+}
 
-    letter-spacing: 1px;
 
-    text-transform: uppercase;
+/* =====================================================
+   LINKS
+===================================================== */
+
+.channel-intro a {
+    color: #65aee4;
+
+    text-decoration: none;
+}
+
+.channel-intro a:hover {
+    text-decoration: underline;
 }
 
 
@@ -393,26 +288,27 @@ a {
    TABLET
 ===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
     .channel-banner {
-        height: 220px;
-    }
-
-    .banner-title {
-        left: 25px;
-
-        bottom: 27px;
-    }
-
-    .banner-title h1 {
-        font-size: 39px;
+        height: 300px;
     }
 
     .channel-layout {
         grid-template-columns:
             minmax(0, 1fr)
-            260px;
+            320px;
+    }
+
+    .sidebar-name h2 {
+        font-size: 31px;
+    }
+
+    .sidebar-icon {
+        width: 60px;
+        height: 60px;
+
+        flex-basis: 60px;
     }
 
 }
@@ -422,37 +318,20 @@ a {
    MOBILE
 ===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
 
     .channel-banner {
-        height: 180px;
+        height: 210px;
     }
 
-    .channel-banner::after {
-        background:
-            linear-gradient(
-                to right,
-                rgba(0, 0, 0, .68),
-                rgba(0, 0, 0, .15)
-            );
-    }
-
-    .banner-title {
-        left: 18px;
-
-        bottom: 20px;
-    }
-
-    .banner-title h1 {
-        font-size: 31px;
-    }
-
-    .banner-title p {
-        font-size: 13px;
+    .channel-banner img {
+        object-position: center;
     }
 
 
-    /* Stack sidebar and chat */
+    /* ---------------------------------------------
+       STACK SIDEBAR ABOVE COMMENTS
+    --------------------------------------------- */
 
     .channel-layout {
         display: flex;
@@ -470,26 +349,72 @@ a {
         width: 100%;
 
         order: 2;
+
+        padding: 14px 12px 22px;
     }
+
+
+    /* ---------------------------------------------
+       PAGE SPACING
+    --------------------------------------------- */
 
     .channel-area {
         padding:
-            14px 10px
+            12px 10px
             80px;
     }
 
+
+    /* ---------------------------------------------
+       SIDEBAR
+    --------------------------------------------- */
+
     .sidebar-main {
-        padding: 18px;
+        padding: 19px;
     }
 
-    .disqus-inner {
-        padding:
-            14px 12px
-            22px;
+    .sidebar-name {
+        margin-bottom: 18px;
     }
 
-    .chat-heading {
-        padding: 14px 13px;
+    .sidebar-icon {
+        width: 54px;
+        height: 54px;
+
+        flex-basis: 54px;
+    }
+
+    .sidebar-name h2 {
+        font-size: 28px;
+    }
+
+    .channel-intro {
+        font-size: 14px;
+    }
+
+    .channel-intro .welcome {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .channel-banner {
+        height: 170px;
+    }
+
+    .channel-nav {
+        height: 48px;
+    }
+
+    .channel-nav a {
+        font-size: 11px;
     }
 
 }
@@ -509,21 +434,9 @@ a {
 <header class="channel-banner">
 
     <img
-        src="beach.png"
-        alt=""
+        src="banner.png"
+        alt="Moloco - Spirit of the people"
     >
-
-    <div class="banner-title">
-
-        <h1>
-            Moloco.
-        </h1>
-
-        <p>
-            Spirit of the people.
-        </p>
-
-    </div>
 
 </header>
 
@@ -544,10 +457,10 @@ a {
 
 
 <!-- =====================================================
-     CHANNEL
+     MAIN CHANNEL AREA
 ===================================================== -->
 
-<div class="channel-area">
+<section class="channel-area">
 
 
     <div class="channel-layout">
@@ -555,87 +468,68 @@ a {
 
 
         <!-- =============================================
-             MAIN CHATROOM
+             REAL DISQUS CHATROOM
         ============================================== -->
 
         <main class="chat-column">
 
 
-            <div class="chat-heading">
-
-                <span>≠</span>
-                MAIN CHATROOM
-                <span>≠</span>
-
-            </div>
+            <div id="disqus_thread"></div>
 
 
+            <script>
 
-            <div class="disqus-inner">
+                /*
+                 * MOLOCO MAIN CHATROOM
+                 */
 
+                var disqus_config = function () {
 
-                <div id="disqus_thread"></div>
+                    this.page.identifier =
+                        'main-chatroom';
 
+                    this.page.title =
+                        'Main Chatroom';
 
-                <script>
+                    this.page.url =
+                        'https://disqusmoloco.github.io/';
 
-                    var disqus_config = function () {
-
-
-                        this.page.identifier =
-                            'main-chatroom';
-
-
-                        this.page.title =
-                            'Main Chatroom';
-
-
-                        this.page.url =
-                            'https://disqusmoloco.github.io/';
+                };
 
 
-                    };
+                /*
+                 * LOAD DISQUS
+                 */
+
+                (function () {
+
+                    var d = document;
+
+                    var s =
+                        d.createElement('script');
+
+                    s.src =
+                        'https://disqusmoloco.disqus.com/embed.js';
+
+                    s.setAttribute(
+                        'data-timestamp',
+                        +new Date()
+                    );
+
+                    (d.head || d.body)
+                        .appendChild(s);
+
+                })();
+
+            </script>
 
 
-                    (function () {
+            <noscript>
 
+                Please enable JavaScript to view
+                the comments powered by Disqus.
 
-                        var d = document;
-
-
-                        var s =
-                            d.createElement('script');
-
-
-                        s.src =
-                            'https://disqusmoloco.disqus.com/embed.js';
-
-
-                        s.setAttribute(
-                            'data-timestamp',
-                            +new Date()
-                        );
-
-
-                        (d.head || d.body)
-                            .appendChild(s);
-
-
-                    })();
-
-
-                </script>
-
-
-                <noscript>
-
-                    Please enable JavaScript to view
-                    the comments powered by Disqus.
-
-                </noscript>
-
-
-            </div>
+            </noscript>
 
 
         </main>
@@ -643,7 +537,7 @@ a {
 
 
         <!-- =============================================
-             MOLOCO INFO
+             MOLOCO INFORMATION
         ============================================== -->
 
         <aside class="channel-sidebar">
@@ -652,7 +546,9 @@ a {
             <div class="sidebar-main">
 
 
-                <!-- NAME -->
+                <!-- =====================================
+                     NAME + ICON
+                ====================================== -->
 
                 <div class="sidebar-name">
 
@@ -660,7 +556,7 @@ a {
                     <div class="sidebar-icon">
 
                         <img
-                            src="beach.png"
+                            src="banner.png"
                             alt=""
                         >
 
@@ -676,57 +572,36 @@ a {
 
 
 
-                <!-- INTRODUCTION -->
+                <!-- =====================================
+                     INTRODUCTION
+                ====================================== -->
 
                 <div class="channel-intro">
 
 
-                    <p>
-                        <strong>
-                            Hey! Welcome to Moloco.
-                        </strong>
+                    <p class="welcome">
+                        Hey! Welcome to Moloco.
                     </p>
 
 
                     <p>
-                        This is basically just a
-                        chatroom for anything and
-                        everything. There isn't a
-                        set topic, so feel free to
-                        talk about whatever you feel
-                        like talking about.
+                        This is basically just a chatroom
+                        for anything and everything. There
+                        isn't a set topic, so feel free to
+                        talk about whatever you feel like
+                        talking about.
                     </p>
 
 
                     <p>
-                        All I ask is that you follow
-                        Disqus' Terms of Service and
-                        be respectful. Beyond that,
-                        make yourself at home, jump
-                        into conversations, and have
+                        All I ask is that you follow Disqus
+                        Terms of Service and be respectful.
+                        Beyond that, make yourself at home,
+                        jump into conversations, and have
                         fun. ♡
                     </p>
 
 
-                </div>
-
-
-
-                <!-- DIVIDER -->
-
-                <div class="sidebar-divider"></div>
-
-
-
-                <!-- ROOM -->
-
-                <div class="sidebar-room-label">
-                    Room
-                </div>
-
-
-                <div class="sidebar-room">
-                    Main Chatroom
                 </div>
 
 
@@ -739,7 +614,7 @@ a {
     </div>
 
 
-</div>
+</section>
 
 
 </body>
