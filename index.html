@@ -39,17 +39,13 @@ a {
 
 
 /* =====================================================
-   NEW MOLOCO BANNER
-
-   This uses the NEW wide banner.png.
-   Nothing is cropped or stretched.
+   BANNER — 800PX
 ===================================================== */
 
 .channel-banner {
     width: 100%;
 
-    margin: 0;
-    padding: 0;
+    padding: 18px 20px;
 
     background: #02111c;
 }
@@ -57,7 +53,7 @@ a {
 .channel-banner img {
     display: block;
 
-    width: 1180px;
+    width: 800px;
     max-width: 100%;
 
     height: auto;
@@ -128,7 +124,7 @@ a {
 
 
 /* =====================================================
-   OLD DISQUS-CHANNEL STYLE LAYOUT
+   OLD DISQUS-STYLE LAYOUT
 ===================================================== */
 
 .channel-layout {
@@ -180,7 +176,7 @@ a {
 
 
 /* =====================================================
-   MOLOCO SIDEBAR
+   SIDEBAR
 ===================================================== */
 
 .channel-sidebar {
@@ -197,7 +193,7 @@ a {
 
 
 /* =====================================================
-   SIDEBAR HEADER
+   SIDEBAR NAME
 ===================================================== */
 
 .sidebar-name {
@@ -211,7 +207,7 @@ a {
 
 
 /* =====================================================
-   SMALL ROUND MOLOCO ICON
+   SMALL ROUND ICON
 ===================================================== */
 
 .sidebar-icon {
@@ -303,53 +299,55 @@ a {
 
 @media (max-width: 700px) {
 
-    /*
-       Banner still uses its natural aspect ratio.
-       There is NO special mobile crop.
-    */
+    /* Keep full banner visible */
+
+    .channel-banner {
+        padding: 12px 10px;
+    }
 
     .channel-banner img {
-        width: 100%;
+        width: 800px;
+        max-width: 100%;
         height: auto;
     }
 
 
-    /*
-       Put Moloco information above the chat
-       on smaller screens.
-    */
+    /* Stack sidebar above chat */
 
     .channel-layout {
         display: flex;
+
         flex-direction: column;
     }
 
     .channel-sidebar {
         width: 100%;
+
         order: 1;
     }
 
     .chat-column {
         width: 100%;
+
         order: 2;
     }
 
 
-    /* PAGE */
+    /* Page spacing */
 
     .channel-area {
         padding: 14px 10px 80px;
     }
 
 
-    /* SIDEBAR */
+    /* Sidebar */
 
     .sidebar-main {
         padding: 18px;
     }
 
 
-    /* DISQUS */
+    /* Disqus */
 
     .disqus-inner {
         padding: 14px 12px 22px;
@@ -391,7 +389,7 @@ a {
 
 
 <!-- =====================================================
-     NEW WIDE BANNER
+     MOLOCO BANNER
 ===================================================== -->
 
 <header class="channel-banner">
@@ -515,9 +513,7 @@ a {
             <div class="sidebar-main">
 
 
-                <!-- =====================================
-                     NAME
-                ====================================== -->
+                <!-- NAME -->
 
                 <div class="sidebar-name">
 
@@ -541,9 +537,7 @@ a {
 
 
 
-                <!-- =====================================
-                     INTRODUCTION
-                ====================================== -->
+                <!-- INTRODUCTION -->
 
                 <div class="channel-intro">
 
