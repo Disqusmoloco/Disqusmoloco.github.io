@@ -184,8 +184,8 @@ a {
     /*
        No bottom margin.
 
-       The underwater section starts
-       immediately after this image.
+       Ocean begins immediately after
+       the beach image.
     */
 
     margin: 0 auto;
@@ -205,39 +205,48 @@ a {
 
 /* =====================================================
    UNDERWATER AREA
-
-   The new high-quality ocean image begins
-   exactly where the Disqus area begins.
 ===================================================== */
 
 .discussion-area {
     width: 100%;
 
-    min-height: 1200px;
+    /*
+       Plenty of room for a long discussion.
+    */
+
+    min-height: 1600px;
 
     /*
-       ZERO top padding.
+       No top padding.
 
-       This means the underwater image starts
-       at the exact same point as the Disqus box.
+       Ocean begins at the exact same point
+       as the Disqus section.
     */
 
     padding: 0 20px 140px;
 
-    background-color: #020b12;
+    /*
+       Deep blue fallback instead of black.
+    */
+
+    background-color: #03131f;
 
     background-image: url("ocean.png");
 
     /*
-       The new image is already wide and framed
-       correctly, so there is no -230px shift.
+       Keep the ocean image wide.
     */
 
     background-size: 100% auto;
 
     background-position: center top;
 
-    background-repeat: no-repeat;
+    /*
+       Continue the underwater texture
+       vertically as the comments get longer.
+    */
+
+    background-repeat: repeat-y;
 }
 
 
@@ -322,6 +331,8 @@ a {
         background-size: auto 800px;
 
         background-position: center top;
+
+        background-repeat: repeat-y;
     }
 
     .disqus-shell {
@@ -407,20 +418,17 @@ a {
     /* UNDERWATER */
 
     .discussion-area {
-        min-height: 900px;
+        min-height: 1200px;
 
         padding: 0 10px 100px;
 
-        /*
-           Keep the ocean looking good on a
-           narrow phone without squashing it.
-        */
+        background-color: #03131f;
 
         background-size: auto 700px;
 
         background-position: center top;
 
-        background-repeat: no-repeat;
+        background-repeat: repeat-y;
     }
 
 
@@ -526,7 +534,8 @@ a {
     <!-- =================================================
          UNDERWATER + DISQUS
 
-         Ocean starts EXACTLY here.
+         Ocean begins here and continues
+         all the way down the discussion.
     ================================================== -->
 
     <section class="discussion-area">
