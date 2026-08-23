@@ -11,6 +11,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 html { background: #080808; }
+
 body {
     background: #080808;
     color: #d7d7d7;
@@ -18,6 +19,11 @@ body {
 }
 
 a { color: #bdbdbd; }
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .site-header {
     height: 96px;
@@ -36,6 +42,11 @@ a { color: #bdbdbd; }
     line-height: 1;
     letter-spacing: 1px;
 }
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .main-nav {
     height: 48px;
@@ -68,6 +79,11 @@ a { color: #bdbdbd; }
     background: #9a9a9a;
 }
 
+
+/* =====================================================
+   PAGE
+===================================================== */
+
 .page-shell {
     width: 100%;
     min-height: 900px;
@@ -75,14 +91,19 @@ a { color: #bdbdbd; }
 }
 
 .main-content {
-    width: 940px;
+    width: 800px;
     max-width: 100%;
     margin: 0 auto;
     padding: 32px 0 100px;
 }
 
+
+/* =====================================================
+   ROOM HEADER
+===================================================== */
+
 .room-header {
-    width: 920px;
+    width: 760px;
     max-width: 100%;
     margin: 0 auto 26px;
     padding: 0 0 20px;
@@ -100,10 +121,18 @@ a { color: #bdbdbd; }
     letter-spacing: 3px;
 }
 
-.discussion-area { width: 100%; min-height: 600px; }
+
+/* =====================================================
+   DISQUS
+===================================================== */
+
+.discussion-area {
+    width: 100%;
+    min-height: 600px;
+}
 
 .disqus-shell {
-    width: 920px;
+    width: 760px;
     max-width: 100%;
     margin: 0 auto;
     padding: 22px 26px 30px;
@@ -117,20 +146,46 @@ a { color: #bdbdbd; }
     color-scheme: dark;
 }
 
+
+/* =====================================================
+   TABLET
+===================================================== */
+
 @media (max-width: 850px) {
+
     .site-header {
         height: 78px;
         padding: 20px 15px 0;
     }
 
-    .site-title { font-size: 23px; }
-    .page-shell { padding: 0 15px; }
-    .main-content { padding-top: 28px; }
-    .room-header h2 { font-size: 25px; }
-    .disqus-shell { padding: 18px 18px 24px; }
+    .site-title {
+        font-size: 23px;
+    }
+
+    .page-shell {
+        padding: 0 15px;
+    }
+
+    .main-content {
+        padding-top: 28px;
+    }
+
+    .room-header h2 {
+        font-size: 25px;
+    }
+
+    .disqus-shell {
+        padding: 18px 18px 24px;
+    }
 }
 
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 550px) {
+
     .site-header {
         height: 66px;
         padding: 17px 12px 0;
@@ -141,11 +196,24 @@ a { color: #bdbdbd; }
         letter-spacing: .5px;
     }
 
-    .page-shell { padding: 0 10px; }
-    .main-content { padding-top: 24px; }
-    .room-header h2 { font-size: 21px; letter-spacing: 2px; }
-    .disqus-shell { padding: 14px 12px 20px; }
+    .page-shell {
+        padding: 0 10px;
+    }
+
+    .main-content {
+        padding-top: 24px;
+    }
+
+    .room-header h2 {
+        font-size: 21px;
+        letter-spacing: 2px;
+    }
+
+    .disqus-shell {
+        padding: 14px 12px 20px;
+    }
 }
+
 </style>
 
 </head>
@@ -155,11 +223,15 @@ a { color: #bdbdbd; }
 
 
 <!-- =====================================================
-     HERO
+     HEADER
 ===================================================== -->
 
 <header class="site-header" aria-label="Moloco">
-    <h1 class="site-title">Moloco.</h1>
+
+    <h1 class="site-title">
+        Moloco.
+    </h1>
+
 </header>
 
 
