@@ -184,8 +184,8 @@ a {
     /*
        No bottom margin.
 
-       This makes the underwater section begin
-       immediately after the beach image.
+       The underwater section starts
+       immediately after this image.
     */
 
     margin: 0 auto;
@@ -206,12 +206,8 @@ a {
 /* =====================================================
    UNDERWATER AREA
 
-   The underwater image begins EXACTLY where
-   the Disqus section begins.
-
-   We use the ORIGINAL ocean image and move it
-   upward so the darker middle/deeper section
-   appears instead of the bright surface.
+   The new high-quality ocean image begins
+   exactly where the Disqus area begins.
 ===================================================== */
 
 .discussion-area {
@@ -220,9 +216,10 @@ a {
     min-height: 1200px;
 
     /*
-       ZERO top padding is intentional.
-       The Disqus box starts exactly where
-       the underwater background starts.
+       ZERO top padding.
+
+       This means the underwater image starts
+       at the exact same point as the Disqus box.
     */
 
     padding: 0 20px 140px;
@@ -232,22 +229,13 @@ a {
     background-image: url("ocean.png");
 
     /*
-       Don't use cover.
-
-       This helps prevent unnecessary enlargement
-       and preserves more of the original quality.
+       The new image is already wide and framed
+       correctly, so there is no -230px shift.
     */
 
     background-size: 100% auto;
 
-    /*
-       Move the image upward.
-
-       This skips the brightest surface section
-       and shows the darker halfway portion.
-    */
-
-    background-position: center -230px;
+    background-position: center top;
 
     background-repeat: no-repeat;
 }
@@ -329,11 +317,11 @@ a {
     }
 
     .discussion-area {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 120px;
+        padding: 0 15px 120px;
 
-        background-position: center -180px;
+        background-size: auto 800px;
+
+        background-position: center top;
     }
 
     .disqus-shell {
@@ -424,14 +412,13 @@ a {
         padding: 0 10px 100px;
 
         /*
-           On phones we preserve the proportions
-           without stretching the image across
-           an enormous desktop width.
+           Keep the ocean looking good on a
+           narrow phone without squashing it.
         */
 
         background-size: auto 700px;
 
-        background-position: center -135px;
+        background-position: center top;
 
         background-repeat: no-repeat;
     }
@@ -539,8 +526,7 @@ a {
     <!-- =================================================
          UNDERWATER + DISQUS
 
-         The underwater background begins
-         EXACTLY HERE.
+         Ocean starts EXACTLY here.
     ================================================== -->
 
     <section class="discussion-area">
