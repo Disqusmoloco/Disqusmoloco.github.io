@@ -24,30 +24,13 @@ body {
 }
 
 html {
-    background: #03111b;
+    background: #080808;
 }
 
 body {
+    background: #080808;
     color: #d7d7d7;
     font-family: Arial, Helvetica, sans-serif;
-
-    /*
-       OCEAN BACKGROUND
-    */
-
-    background:
-        linear-gradient(
-            rgba(0, 8, 15, 0.10),
-            rgba(0, 8, 15, 0.30)
-        ),
-        url("ocean.png");
-
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    min-height: 100vh;
 }
 
 a {
@@ -94,26 +77,17 @@ a {
 
 .page-shell {
     width: 100%;
-
     min-height: 900px;
 
-    padding: 0 20px;
-
-    /*
-       Transparent so the ocean background
-       can be seen behind the page.
-    */
-
-    background: transparent;
+    background: #080808;
 }
 
 .main-content {
-    width: 800px;
-    max-width: 100%;
+    width: 100%;
 
     margin: 0 auto;
 
-    padding: 22px 0 100px;
+    padding: 22px 0 0;
 }
 
 
@@ -122,7 +96,8 @@ a {
 ===================================================== */
 
 .welcome-image {
-    width: 100%;
+    width: 800px;
+    max-width: calc(100% - 40px);
 
     margin: 0 auto 14px;
 
@@ -175,7 +150,7 @@ a {
 
 .room-header {
     width: 760px;
-    max-width: 100%;
+    max-width: calc(100% - 40px);
 
     margin: 0 auto 18px;
 
@@ -204,7 +179,7 @@ a {
 
 .chatroom-image {
     width: 760px;
-    max-width: 100%;
+    max-width: calc(100% - 40px);
 
     margin: 0 auto 24px;
 
@@ -222,14 +197,40 @@ a {
 
 
 /* =====================================================
-   DISQUS
+   UNDERWATER AREA
+
+   The ocean ONLY starts here.
 ===================================================== */
 
 .discussion-area {
     width: 100%;
 
-    min-height: 600px;
+    min-height: 1000px;
+
+    padding: 30px 20px 140px;
+
+    background-color: #020b12;
+
+    background-image: url("ocean.png");
+
+    /*
+       Don't use "cover".
+
+       This prevents the browser from aggressively
+       enlarging/cropping the image.
+    */
+
+    background-size: 100% auto;
+
+    background-position: center top;
+
+    background-repeat: no-repeat;
 }
+
+
+/* =====================================================
+   DISQUS
+===================================================== */
 
 .disqus-shell {
     width: 760px;
@@ -238,11 +239,6 @@ a {
     margin: 0 auto;
 
     padding: 22px 26px 30px;
-
-    /*
-       Keep the actual discussion dark so
-       comments remain easy to read.
-    */
 
     background: #0b0b0b;
 
@@ -259,13 +255,10 @@ a {
 
 
 /*
-   IMPORTANT:
-
    There is intentionally NO custom username
    coloring here.
 
-   This allows Disqus to use its normal
-   username/link colors again.
+   Disqus can use its normal username/link colors.
 */
 
 
@@ -285,20 +278,32 @@ a {
         font-size: 23px;
     }
 
-    .page-shell {
-        padding: 0 15px;
-    }
-
     .main-content {
         padding-top: 20px;
+    }
+
+    .welcome-image {
+        max-width: calc(100% - 30px);
     }
 
     .welcome-image img {
         width: 280px;
     }
 
+    .room-header {
+        max-width: calc(100% - 30px);
+    }
+
     .room-header h2 {
         font-size: 19px;
+    }
+
+    .chatroom-image {
+        max-width: calc(100% - 30px);
+    }
+
+    .discussion-area {
+        padding: 25px 15px 120px;
     }
 
     .disqus-shell {
@@ -314,21 +319,6 @@ a {
 
 @media (max-width: 550px) {
 
-    /*
-       Fixed backgrounds can behave strangely
-       on some mobile browsers, so scroll is
-       more reliable here.
-    */
-
-    body {
-        background-attachment: scroll;
-
-        background-size: cover;
-
-        background-position: center top;
-    }
-
-
     .site-header {
         height: 66px;
 
@@ -341,10 +331,6 @@ a {
         letter-spacing: .5px;
     }
 
-    .page-shell {
-        padding: 0 10px;
-    }
-
     .main-content {
         padding-top: 18px;
     }
@@ -353,6 +339,8 @@ a {
     /* WELCOME */
 
     .welcome-image {
+        max-width: calc(100% - 20px);
+
         margin-bottom: 12px;
     }
 
@@ -377,6 +365,8 @@ a {
     /* MAIN CHATROOM */
 
     .room-header {
+        max-width: calc(100% - 20px);
+
         margin-bottom: 14px;
     }
 
@@ -390,7 +380,24 @@ a {
     /* BEACH */
 
     .chatroom-image {
+        max-width: calc(100% - 20px);
+
         margin-bottom: 18px;
+    }
+
+
+    /* UNDERWATER */
+
+    .discussion-area {
+        padding: 20px 10px 100px;
+
+        /*
+           Preserve the image's proportions.
+        */
+
+        background-size: auto 700px;
+
+        background-position: center top;
     }
 
 
@@ -494,7 +501,9 @@ a {
 
 
     <!-- =================================================
-         DISQUS
+         UNDERWATER + DISQUS
+
+         Ocean begins HERE.
     ================================================== -->
 
     <section class="discussion-area">
