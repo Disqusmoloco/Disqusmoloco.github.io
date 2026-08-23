@@ -107,11 +107,8 @@ a {
     display: block;
 
     /*
-       Use the actual welcome.png at its
-       natural/full size.
-
-       It will only shrink if the screen
-       becomes too narrow.
+       Use the full welcome.png naturally.
+       It only shrinks if the screen is too narrow.
     */
 
     width: auto;
@@ -189,6 +186,13 @@ a {
     width: 760px;
     max-width: calc(100% - 40px);
 
+    /*
+       No bottom margin.
+
+       The underwater section begins immediately
+       after the beach image.
+    */
+
     margin: 0 auto;
 
     text-align: center;
@@ -206,6 +210,13 @@ a {
 
 /* =====================================================
    UNDERWATER AREA
+
+   Ocean begins EXACTLY where Disqus begins.
+
+   It does NOT repeat.
+
+   Instead, it naturally fades into a matching
+   dark navy background near the bottom.
 ===================================================== */
 
 .discussion-area {
@@ -213,35 +224,34 @@ a {
 
     min-height: 1600px;
 
-    /*
-       Ocean starts exactly where
-       the Disqus section starts.
-    */
-
     padding: 0 20px 140px;
-
-    /*
-       Matching deep navy continuation.
-
-       When the ocean image ends,
-       this color continues instead
-       of the image repeating.
-    */
 
     background-color: #02111c;
 
-    background-image: url("ocean.png");
+    background-image:
 
-    background-size: 100% auto;
+        linear-gradient(
+            to bottom,
+            rgba(2, 17, 28, 0) 0%,
+            rgba(2, 17, 28, 0) 60%,
+            rgba(2, 17, 28, 0.35) 75%,
+            rgba(2, 17, 28, 0.75) 90%,
+            #02111c 100%
+        ),
 
-    background-position: center top;
+        url("ocean.png");
 
-    /*
-       IMPORTANT:
-       Do not repeat the image.
-    */
+    background-size:
+        100% auto,
+        100% auto;
 
-    background-repeat: no-repeat;
+    background-position:
+        center top,
+        center top;
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
 }
 
 
@@ -272,7 +282,11 @@ a {
 
 
 /*
-   No custom username coloring.
+   There is intentionally NO custom username
+   coloring here.
+
+   This allows Disqus to use its normal
+   username/link colors.
 */
 
 
@@ -296,15 +310,17 @@ a {
         padding-top: 20px;
     }
 
-    /*
-       Welcome keeps its normal proportions.
-       We do NOT force a 280px width.
-    */
+
+    /* WELCOME */
 
     .welcome-image img {
         width: auto;
+
         max-width: 100%;
     }
+
+
+    /* MAIN CHATROOM */
 
     .room-header {
         max-width: calc(100% - 30px);
@@ -314,19 +330,34 @@ a {
         font-size: 19px;
     }
 
+
+    /* BEACH */
+
     .chatroom-image {
         max-width: calc(100% - 30px);
     }
 
+
+    /* UNDERWATER */
+
     .discussion-area {
         padding: 0 15px 120px;
 
-        background-size: 100% auto;
+        background-size:
+            auto 800px,
+            auto 800px;
 
-        background-position: center top;
+        background-position:
+            center top,
+            center top;
 
-        background-repeat: no-repeat;
+        background-repeat:
+            no-repeat,
+            no-repeat;
     }
+
+
+    /* DISQUS */
 
     .disqus-shell {
         padding: 18px 18px 24px;
@@ -366,9 +397,8 @@ a {
 
     .welcome-image img {
         /*
-           Again: no 230px squeeze.
-           The image scales naturally
-           to the phone width.
+           Do NOT squeeze Welcome down to 230px.
+           It scales naturally to the phone width.
         */
 
         width: auto;
@@ -423,11 +453,17 @@ a {
 
         background-color: #02111c;
 
-        background-size: auto 700px;
+        background-size:
+            auto 700px,
+            auto 700px;
 
-        background-position: center top;
+        background-position:
+            center top,
+            center top;
 
-        background-repeat: no-repeat;
+        background-repeat:
+            no-repeat,
+            no-repeat;
     }
 
 
