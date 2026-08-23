@@ -92,7 +92,7 @@ a {
 
 
 /* =====================================================
-   TECHNOLOGICAL WELCOME
+   WELCOME
 ===================================================== */
 
 .welcome-image {
@@ -181,7 +181,14 @@ a {
     width: 760px;
     max-width: calc(100% - 40px);
 
-    margin: 0 auto 24px;
+    /*
+       No bottom margin.
+
+       This makes the underwater section begin
+       immediately after the beach image.
+    */
+
+    margin: 0 auto;
 
     text-align: center;
 }
@@ -199,30 +206,48 @@ a {
 /* =====================================================
    UNDERWATER AREA
 
-   The ocean ONLY starts here.
+   The underwater image begins EXACTLY where
+   the Disqus section begins.
+
+   We use the ORIGINAL ocean image and move it
+   upward so the darker middle/deeper section
+   appears instead of the bright surface.
 ===================================================== */
 
 .discussion-area {
     width: 100%;
 
-    min-height: 1000px;
+    min-height: 1200px;
 
-    padding: 30px 20px 140px;
+    /*
+       ZERO top padding is intentional.
+       The Disqus box starts exactly where
+       the underwater background starts.
+    */
+
+    padding: 0 20px 140px;
 
     background-color: #020b12;
 
     background-image: url("ocean.png");
 
     /*
-       Don't use "cover".
+       Don't use cover.
 
-       This prevents the browser from aggressively
-       enlarging/cropping the image.
+       This helps prevent unnecessary enlargement
+       and preserves more of the original quality.
     */
 
     background-size: 100% auto;
 
-    background-position: center top;
+    /*
+       Move the image upward.
+
+       This skips the brightest surface section
+       and shows the darker halfway portion.
+    */
+
+    background-position: center -230px;
 
     background-repeat: no-repeat;
 }
@@ -258,7 +283,8 @@ a {
    There is intentionally NO custom username
    coloring here.
 
-   Disqus can use its normal username/link colors.
+   This allows Disqus to use its normal
+   username/link colors.
 */
 
 
@@ -303,7 +329,11 @@ a {
     }
 
     .discussion-area {
-        padding: 25px 15px 120px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 120px;
+
+        background-position: center -180px;
     }
 
     .disqus-shell {
@@ -382,22 +412,28 @@ a {
     .chatroom-image {
         max-width: calc(100% - 20px);
 
-        margin-bottom: 18px;
+        margin-bottom: 0;
     }
 
 
     /* UNDERWATER */
 
     .discussion-area {
-        padding: 20px 10px 100px;
+        min-height: 900px;
+
+        padding: 0 10px 100px;
 
         /*
-           Preserve the image's proportions.
+           On phones we preserve the proportions
+           without stretching the image across
+           an enormous desktop width.
         */
 
         background-size: auto 700px;
 
-        background-position: center top;
+        background-position: center -135px;
+
+        background-repeat: no-repeat;
     }
 
 
@@ -449,7 +485,7 @@ a {
     <div class="welcome-image">
 
         <img
-            src="welcome.png"
+            src="welcome-new.png"
             alt="Welcome"
         >
 
@@ -503,7 +539,8 @@ a {
     <!-- =================================================
          UNDERWATER + DISQUS
 
-         Ocean begins HERE.
+         The underwater background begins
+         EXACTLY HERE.
     ================================================== -->
 
     <section class="discussion-area">
