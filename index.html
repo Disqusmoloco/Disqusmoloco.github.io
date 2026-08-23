@@ -39,12 +39,16 @@ a {
 
 
 /* =====================================================
-   BANNER
-   Full artwork visible, but NOT enormous.
+   NEW MOLOCO BANNER
+
+   This uses the NEW wide banner.png.
+   Nothing is cropped or stretched.
 ===================================================== */
 
 .channel-banner {
     width: 100%;
+
+    margin: 0;
     padding: 0;
 
     background: #02111c;
@@ -63,7 +67,7 @@ a {
 
 
 /* =====================================================
-   HOME
+   HOME BAR
 ===================================================== */
 
 .channel-nav {
@@ -114,6 +118,7 @@ a {
 
 .channel-area {
     width: 100%;
+
     min-height: 1500px;
 
     padding: 24px 20px 120px;
@@ -123,7 +128,7 @@ a {
 
 
 /* =====================================================
-   OLD DISQUS-STYLE LAYOUT
+   OLD DISQUS-CHANNEL STYLE LAYOUT
 ===================================================== */
 
 .channel-layout {
@@ -145,7 +150,7 @@ a {
 
 
 /* =====================================================
-   CHAT
+   CHAT COLUMN
 ===================================================== */
 
 .chat-column {
@@ -175,7 +180,7 @@ a {
 
 
 /* =====================================================
-   SIDEBAR
+   MOLOCO SIDEBAR
 ===================================================== */
 
 .channel-sidebar {
@@ -192,7 +197,7 @@ a {
 
 
 /* =====================================================
-   SIDEBAR NAME
+   SIDEBAR HEADER
 ===================================================== */
 
 .sidebar-name {
@@ -206,7 +211,7 @@ a {
 
 
 /* =====================================================
-   SMALL ICON
+   SMALL ROUND MOLOCO ICON
 ===================================================== */
 
 .sidebar-icon {
@@ -298,6 +303,22 @@ a {
 
 @media (max-width: 700px) {
 
+    /*
+       Banner still uses its natural aspect ratio.
+       There is NO special mobile crop.
+    */
+
+    .channel-banner img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /*
+       Put Moloco information above the chat
+       on smaller screens.
+    */
+
     .channel-layout {
         display: flex;
         flex-direction: column;
@@ -313,20 +334,50 @@ a {
         order: 2;
     }
 
+
+    /* PAGE */
+
     .channel-area {
-        padding:
-            14px 10px
-            80px;
+        padding: 14px 10px 80px;
     }
+
+
+    /* SIDEBAR */
 
     .sidebar-main {
         padding: 18px;
     }
 
+
+    /* DISQUS */
+
     .disqus-inner {
-        padding:
-            14px 12px
-            22px;
+        padding: 14px 12px 22px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .channel-nav {
+        height: 48px;
+    }
+
+    .channel-nav a {
+        font-size: 10px;
+    }
+
+    .sidebar-name h2 {
+        font-size: 20px;
+    }
+
+    .channel-intro {
+        font-size: 13px;
     }
 
 }
@@ -340,7 +391,7 @@ a {
 
 
 <!-- =====================================================
-     MOLOCO BANNER
+     NEW WIDE BANNER
 ===================================================== -->
 
 <header class="channel-banner">
@@ -369,7 +420,7 @@ a {
 
 
 <!-- =====================================================
-     CHANNEL
+     MAIN CHANNEL AREA
 ===================================================== -->
 
 <section class="channel-area">
@@ -378,8 +429,9 @@ a {
     <div class="channel-layout">
 
 
+
         <!-- =============================================
-             CHATROOM
+             DISQUS CHATROOM
         ============================================== -->
 
         <main class="chat-column">
@@ -392,6 +444,10 @@ a {
 
 
                 <script>
+
+                    /*
+                     * MOLOCO MAIN CHATROOM
+                     */
 
                     var disqus_config = function () {
 
@@ -406,6 +462,10 @@ a {
 
                     };
 
+
+                    /*
+                     * LOAD DISQUS
+                     */
 
                     (function () {
 
@@ -431,8 +491,10 @@ a {
 
 
                 <noscript>
+
                     Please enable JavaScript to view
                     the comments powered by Disqus.
+
                 </noscript>
 
 
@@ -444,7 +506,7 @@ a {
 
 
         <!-- =============================================
-             MOLOCO INFO
+             MOLOCO SIDEBAR
         ============================================== -->
 
         <aside class="channel-sidebar">
@@ -452,6 +514,10 @@ a {
 
             <div class="sidebar-main">
 
+
+                <!-- =====================================
+                     NAME
+                ====================================== -->
 
                 <div class="sidebar-name">
 
@@ -474,6 +540,10 @@ a {
                 </div>
 
 
+
+                <!-- =====================================
+                     INTRODUCTION
+                ====================================== -->
 
                 <div class="channel-intro">
 
