@@ -24,13 +24,30 @@ body {
 }
 
 html {
-    background: #080808;
+    background: #03111b;
 }
 
 body {
-    background: #080808;
     color: #d7d7d7;
     font-family: Arial, Helvetica, sans-serif;
+
+    /*
+       OCEAN BACKGROUND
+    */
+
+    background:
+        linear-gradient(
+            rgba(0, 8, 15, 0.10),
+            rgba(0, 8, 15, 0.30)
+        ),
+        url("ocean.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
 }
 
 a {
@@ -44,8 +61,10 @@ a {
 
 .site-header {
     height: 96px;
+
     display: flex;
     align-items: flex-start;
+
     padding: 24px 20px 0;
 
     background: #080808;
@@ -75,9 +94,17 @@ a {
 
 .page-shell {
     width: 100%;
+
     min-height: 900px;
 
     padding: 0 20px;
+
+    /*
+       Transparent so the ocean background
+       can be seen behind the page.
+    */
+
+    background: transparent;
 }
 
 .main-content {
@@ -212,6 +239,11 @@ a {
 
     padding: 22px 26px 30px;
 
+    /*
+       Keep the actual discussion dark so
+       comments remain easy to read.
+    */
+
     background: #0b0b0b;
 
     border: 1px solid #262626;
@@ -281,6 +313,21 @@ a {
 ===================================================== */
 
 @media (max-width: 550px) {
+
+    /*
+       Fixed backgrounds can behave strangely
+       on some mobile browsers, so scroll is
+       more reliable here.
+    */
+
+    body {
+        background-attachment: scroll;
+
+        background-size: cover;
+
+        background-position: center top;
+    }
+
 
     .site-header {
         height: 66px;
