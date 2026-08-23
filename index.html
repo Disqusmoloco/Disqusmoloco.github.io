@@ -59,7 +59,13 @@ a {
     height: 100%;
 
     object-fit: cover;
-    object-position: center;
+
+    /*
+       Keep the TOP of the artwork visible
+       so the Moloco title does not get cut off.
+    */
+
+    object-position: center top;
 }
 
 
@@ -289,6 +295,10 @@ a {
         height: 240px;
     }
 
+    .channel-banner img {
+        object-position: center top;
+    }
+
     .channel-layout {
         grid-template-columns:
             minmax(0, 1fr)
@@ -309,7 +319,7 @@ a {
     }
 
     .channel-banner img {
-        object-position: center;
+        object-position: center top;
     }
 
 
