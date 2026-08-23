@@ -96,8 +96,7 @@ a {
 ===================================================== */
 
 .welcome-image {
-    width: 800px;
-    max-width: calc(100% - 40px);
+    width: 100%;
 
     margin: 0 auto 14px;
 
@@ -107,8 +106,17 @@ a {
 .welcome-image img {
     display: block;
 
-    width: 320px;
-    max-width: 80%;
+    /*
+       Use the actual welcome.png at its
+       natural/full size.
+
+       It will only shrink if the screen
+       becomes too narrow.
+    */
+
+    width: auto;
+
+    max-width: 100%;
 
     height: auto;
 
@@ -181,13 +189,6 @@ a {
     width: 760px;
     max-width: calc(100% - 40px);
 
-    /*
-       No bottom margin.
-
-       Ocean begins immediately after
-       the beach image.
-    */
-
     margin: 0 auto;
 
     text-align: center;
@@ -210,43 +211,37 @@ a {
 .discussion-area {
     width: 100%;
 
-    /*
-       Plenty of room for a long discussion.
-    */
-
     min-height: 1600px;
 
     /*
-       No top padding.
-
-       Ocean begins at the exact same point
-       as the Disqus section.
+       Ocean starts exactly where
+       the Disqus section starts.
     */
 
     padding: 0 20px 140px;
 
     /*
-       Deep blue fallback instead of black.
+       Matching deep navy continuation.
+
+       When the ocean image ends,
+       this color continues instead
+       of the image repeating.
     */
 
-    background-color: #03131f;
+    background-color: #02111c;
 
     background-image: url("ocean.png");
-
-    /*
-       Keep the ocean image wide.
-    */
 
     background-size: 100% auto;
 
     background-position: center top;
 
     /*
-       Continue the underwater texture
-       vertically as the comments get longer.
+       IMPORTANT:
+       Do not repeat the image.
     */
 
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
 }
 
 
@@ -277,11 +272,7 @@ a {
 
 
 /*
-   There is intentionally NO custom username
-   coloring here.
-
-   This allows Disqus to use its normal
-   username/link colors.
+   No custom username coloring.
 */
 
 
@@ -305,12 +296,14 @@ a {
         padding-top: 20px;
     }
 
-    .welcome-image {
-        max-width: calc(100% - 30px);
-    }
+    /*
+       Welcome keeps its normal proportions.
+       We do NOT force a 280px width.
+    */
 
     .welcome-image img {
-        width: 280px;
+        width: auto;
+        max-width: 100%;
     }
 
     .room-header {
@@ -328,11 +321,11 @@ a {
     .discussion-area {
         padding: 0 15px 120px;
 
-        background-size: auto 800px;
+        background-size: 100% auto;
 
         background-position: center top;
 
-        background-repeat: repeat-y;
+        background-repeat: no-repeat;
     }
 
     .disqus-shell {
@@ -368,15 +361,21 @@ a {
     /* WELCOME */
 
     .welcome-image {
-        max-width: calc(100% - 20px);
-
         margin-bottom: 12px;
     }
 
     .welcome-image img {
-        width: 230px;
+        /*
+           Again: no 230px squeeze.
+           The image scales naturally
+           to the phone width.
+        */
 
-        max-width: 85%;
+        width: auto;
+
+        max-width: 100%;
+
+        height: auto;
     }
 
 
@@ -422,13 +421,13 @@ a {
 
         padding: 0 10px 100px;
 
-        background-color: #03131f;
+        background-color: #02111c;
 
         background-size: auto 700px;
 
         background-position: center top;
 
-        background-repeat: repeat-y;
+        background-repeat: no-repeat;
     }
 
 
@@ -480,7 +479,7 @@ a {
     <div class="welcome-image">
 
         <img
-            src="welcome-new.png"
+            src="welcome.png"
             alt="Welcome"
         >
 
@@ -533,9 +532,6 @@ a {
 
     <!-- =================================================
          UNDERWATER + DISQUS
-
-         Ocean begins here and continues
-         all the way down the discussion.
     ================================================== -->
 
     <section class="discussion-area">
