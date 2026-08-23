@@ -28,12 +28,14 @@ html {
 }
 
 body {
-    margin: 0;
-
     background: #02111c;
     color: #d7d7d7;
 
     font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #4da3d9;
 }
 
 
@@ -43,11 +45,11 @@ body {
 
 .channel-banner {
     width: 100%;
-    height: 390px;
+    height: 300px;
 
     overflow: hidden;
 
-    background: #020d17;
+    background: #080808;
 }
 
 .channel-banner img {
@@ -62,29 +64,30 @@ body {
 
 
 /* =====================================================
-   HOME BAR
+   HOME
 ===================================================== */
 
 .channel-nav {
     width: 100%;
-    height: 54px;
+    height: 55px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    background: #031528;
+    background: #071827;
 
-    border-bottom: 1px solid #294052;
+    border-bottom: 1px solid #173044;
 }
 
 .channel-nav a {
     position: relative;
 
-    color: #e1e1e1;
+    color: #d2d2d2;
 
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 11px;
+
+    letter-spacing: 2px;
 
     text-decoration: none;
     text-transform: uppercase;
@@ -95,25 +98,25 @@ body {
 
     position: absolute;
 
-    left: 50%;
+    left: 0;
+    right: 0;
+
     bottom: -19px;
 
-    width: 62px;
     height: 2px;
-
-    transform: translateX(-50%);
 
     background: #4da3d9;
 }
 
 
 /* =====================================================
-   MAIN BLUE AREA
+   PAGE
 ===================================================== */
 
 .channel-area {
     width: 100%;
-    min-height: 1600px;
+
+    min-height: 1500px;
 
     padding: 24px 20px 120px;
 
@@ -122,11 +125,11 @@ body {
 
 
 /* =====================================================
-   TWO COLUMN LAYOUT
+   OLD DISQUS-STYLE LAYOUT
 ===================================================== */
 
 .channel-layout {
-    width: 1380px;
+    width: 1180px;
     max-width: 100%;
 
     margin: 0 auto;
@@ -135,7 +138,7 @@ body {
 
     grid-template-columns:
         minmax(0, 1fr)
-        400px;
+        300px;
 
     gap: 18px;
 
@@ -144,19 +147,26 @@ body {
 
 
 /* =====================================================
-   DISQUS AREA
+   CHAT
 ===================================================== */
 
 .chat-column {
     min-width: 0;
 
-    padding: 20px 24px 28px;
+    background: #0b0b0b;
 
-    background: #03101d;
+    border: 1px solid #26333c;
 
-    border: 1px solid #294052;
+    border-radius: 2px;
+}
 
-    border-radius: 5px;
+
+/* =====================================================
+   DISQUS
+===================================================== */
+
+.disqus-inner {
+    padding: 20px 22px 30px;
 }
 
 #disqus_thread {
@@ -167,50 +177,51 @@ body {
 
 
 /* =====================================================
-   MOLOCO SIDEBAR
+   SIDEBAR
 ===================================================== */
 
 .channel-sidebar {
-    background: #04182b;
+    background: #0d1d2b;
 
-    border: 1px solid #294052;
+    border: 1px solid #203447;
 
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .sidebar-main {
-    padding: 25px 24px 28px;
+    padding: 22px;
 }
 
 
 /* =====================================================
-   SIDEBAR TITLE
+   SIDEBAR NAME
 ===================================================== */
 
 .sidebar-name {
     display: flex;
     align-items: center;
 
-    gap: 16px;
+    gap: 12px;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 
 /* =====================================================
-   ROUND ICON
+   SMALL ICON
 ===================================================== */
 
 .sidebar-icon {
-    width: 74px;
-    height: 74px;
+    width: 44px;
+    height: 44px;
 
-    flex: 0 0 74px;
+    flex: 0 0 44px;
+
+    border-radius: 50%;
 
     overflow: hidden;
 
-    border: 1px solid #40566a;
-    border-radius: 50%;
+    border: 1px solid #395063;
 }
 
 .sidebar-icon img {
@@ -230,14 +241,12 @@ body {
 .sidebar-name h2 {
     margin: 0;
 
-    color: #eee7dc;
+    color: #eeeeee;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 38px;
+    font-size: 22px;
     font-weight: normal;
-
-    line-height: 1;
 }
 
 
@@ -246,41 +255,27 @@ body {
 ===================================================== */
 
 .channel-intro {
-    color: #e0e0e0;
+    color: #aeb8bf;
 
-    font-size: 16px;
+    font-family: Georgia, "Times New Roman", serif;
 
-    line-height: 1.55;
+    font-size: 14px;
+
+    line-height: 1.65;
 }
 
 .channel-intro p {
-    margin: 0 0 20px;
+    margin: 0 0 14px;
 }
 
 .channel-intro p:last-child {
     margin-bottom: 0;
 }
 
-.channel-intro .welcome {
-    color: #82b8e3;
+.channel-intro strong {
+    color: #e0e5e8;
 
-    font-size: 17px;
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   LINKS
-===================================================== */
-
-.channel-intro a {
-    color: #65aee4;
-
-    text-decoration: none;
-}
-
-.channel-intro a:hover {
-    text-decoration: underline;
+    font-weight: normal;
 }
 
 
@@ -288,27 +283,16 @@ body {
    TABLET
 ===================================================== */
 
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
 
     .channel-banner {
-        height: 300px;
+        height: 240px;
     }
 
     .channel-layout {
         grid-template-columns:
             minmax(0, 1fr)
-            320px;
-    }
-
-    .sidebar-name h2 {
-        font-size: 31px;
-    }
-
-    .sidebar-icon {
-        width: 60px;
-        height: 60px;
-
-        flex-basis: 60px;
+            260px;
     }
 
 }
@@ -318,10 +302,10 @@ body {
    MOBILE
 ===================================================== */
 
-@media (max-width: 760px) {
+@media (max-width: 700px) {
 
     .channel-banner {
-        height: 210px;
+        height: 180px;
     }
 
     .channel-banner img {
@@ -329,9 +313,7 @@ body {
     }
 
 
-    /* ---------------------------------------------
-       STACK SIDEBAR ABOVE COMMENTS
-    --------------------------------------------- */
+    /* Sidebar above comments */
 
     .channel-layout {
         display: flex;
@@ -349,72 +331,31 @@ body {
         width: 100%;
 
         order: 2;
-
-        padding: 14px 12px 22px;
     }
 
 
-    /* ---------------------------------------------
-       PAGE SPACING
-    --------------------------------------------- */
+    /* Page */
 
     .channel-area {
         padding:
-            12px 10px
+            14px 10px
             80px;
     }
 
 
-    /* ---------------------------------------------
-       SIDEBAR
-    --------------------------------------------- */
+    /* Sidebar */
 
     .sidebar-main {
-        padding: 19px;
+        padding: 18px;
     }
 
-    .sidebar-name {
-        margin-bottom: 18px;
-    }
 
-    .sidebar-icon {
-        width: 54px;
-        height: 54px;
+    /* Disqus */
 
-        flex-basis: 54px;
-    }
-
-    .sidebar-name h2 {
-        font-size: 28px;
-    }
-
-    .channel-intro {
-        font-size: 14px;
-    }
-
-    .channel-intro .welcome {
-        font-size: 15px;
-    }
-
-}
-
-
-/* =====================================================
-   SMALL PHONE
-===================================================== */
-
-@media (max-width: 480px) {
-
-    .channel-banner {
-        height: 170px;
-    }
-
-    .channel-nav {
-        height: 48px;
-    }
-
-    .channel-nav a {
-        font-size: 11px;
+    .disqus-inner {
+        padding:
+            14px 12px
+            22px;
     }
 
 }
@@ -428,7 +369,7 @@ body {
 
 
 <!-- =====================================================
-     MOLOCO BANNER
+     BANNER
 ===================================================== -->
 
 <header class="channel-banner">
@@ -457,7 +398,7 @@ body {
 
 
 <!-- =====================================================
-     MAIN CHANNEL AREA
+     CHANNEL
 ===================================================== -->
 
 <section class="channel-area">
@@ -468,68 +409,66 @@ body {
 
 
         <!-- =============================================
-             REAL DISQUS CHATROOM
+             CHATROOM
         ============================================== -->
 
         <main class="chat-column">
 
 
-            <div id="disqus_thread"></div>
+            <div class="disqus-inner">
 
 
-            <script>
-
-                /*
-                 * MOLOCO MAIN CHATROOM
-                 */
-
-                var disqus_config = function () {
-
-                    this.page.identifier =
-                        'main-chatroom';
-
-                    this.page.title =
-                        'Main Chatroom';
-
-                    this.page.url =
-                        'https://disqusmoloco.github.io/';
-
-                };
+                <div id="disqus_thread"></div>
 
 
-                /*
-                 * LOAD DISQUS
-                 */
+                <script>
 
-                (function () {
+                    var disqus_config = function () {
 
-                    var d = document;
+                        this.page.identifier =
+                            'main-chatroom';
 
-                    var s =
-                        d.createElement('script');
+                        this.page.title =
+                            'Main Chatroom';
 
-                    s.src =
-                        'https://disqusmoloco.disqus.com/embed.js';
+                        this.page.url =
+                            'https://disqusmoloco.github.io/';
 
-                    s.setAttribute(
-                        'data-timestamp',
-                        +new Date()
-                    );
-
-                    (d.head || d.body)
-                        .appendChild(s);
-
-                })();
-
-            </script>
+                    };
 
 
-            <noscript>
+                    (function () {
 
-                Please enable JavaScript to view
-                the comments powered by Disqus.
+                        var d = document;
 
-            </noscript>
+                        var s =
+                            d.createElement('script');
+
+                        s.src =
+                            'https://disqusmoloco.disqus.com/embed.js';
+
+                        s.setAttribute(
+                            'data-timestamp',
+                            +new Date()
+                        );
+
+                        (d.head || d.body)
+                            .appendChild(s);
+
+                    })();
+
+                </script>
+
+
+                <noscript>
+
+                    Please enable JavaScript to view
+                    the comments powered by Disqus.
+
+                </noscript>
+
+
+            </div>
 
 
         </main>
@@ -537,7 +476,7 @@ body {
 
 
         <!-- =============================================
-             MOLOCO INFORMATION
+             MOLOCO INFO
         ============================================== -->
 
         <aside class="channel-sidebar">
@@ -546,9 +485,7 @@ body {
             <div class="sidebar-main">
 
 
-                <!-- =====================================
-                     NAME + ICON
-                ====================================== -->
+                <!-- NAME -->
 
                 <div class="sidebar-name">
 
@@ -572,15 +509,15 @@ body {
 
 
 
-                <!-- =====================================
-                     INTRODUCTION
-                ====================================== -->
+                <!-- INTRODUCTION -->
 
                 <div class="channel-intro">
 
 
-                    <p class="welcome">
-                        Hey! Welcome to Moloco.
+                    <p>
+                        <strong>
+                            Hey! Welcome to Moloco.
+                        </strong>
                     </p>
 
 
